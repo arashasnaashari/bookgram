@@ -69,7 +69,8 @@ const Compare = ({ image, username }) => {
           </div>
           <div>
             <button className="mr-10 text-white dark:bg-bookgram-sabz bg-black px-1 py-3 rounded-md hover:bg-opacity-50">
-              نوشتن پست {"<<"}{" "}
+<a href="/blog/create">
+              نوشتن پست {"<<"}{" "}</a>
             </button>
           </div>
         </div>
