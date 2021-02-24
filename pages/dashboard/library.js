@@ -6,10 +6,10 @@ import dbConnect from "../../utils/dbConnect";
 import Reader from "../../model/reader";
 import Book from "../../model/Book";
 import withSession from "../../utils/session";
-const Compare = ({ data1,user }) => {
+const Compare = ({ data1, user }) => {
   return (
     <div className="bg-gray-50 font-Vazir dark:bg-gray-900 mb-52 dashboard_zoom">
-     <Nav image={user.profileURL} username={user.username} />
+      <Nav image={user.profileURL} username={user.username} />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         <div className="lg:col-span-9">
           <div
@@ -26,12 +26,14 @@ const Compare = ({ data1,user }) => {
               </button>
             </div>
             <div className="flex justify-around items-center">
-              <img
-                src={`${JSON.parse(data1)[0].book.image}`}
-                alt="s"
-                className="h-1/2 md:h-auto"
-                width="100"
-              />
+              {data1 && (
+                <img
+                  src={`${JSON.parse(data1)[0].book.image}`}
+                  alt="s"
+                  className="h-1/2 md:h-auto"
+                  width="100"
+                />
+              )}
             </div>
           </div>
 
@@ -43,15 +45,21 @@ const Compare = ({ data1,user }) => {
               </h1>
             </div>
           </div>
-          <div style={{ direction: "rtl" }}>
-            <div className="flex flex-row flex-wrap p-5 justify-around">
-              {JSON.parse(data1).map((e) => {
-                return (
-                  <SearchBook data={e.book} key={e._id} rate={e.star / e.nstar} />
-                );
-              })}
+          {data1 && (
+            <div style={{ direction: "rtl" }}>
+              <div className="flex flex-row flex-wrap p-5 justify-around">
+                {JSON.parse(data1).map((e) => {
+                  return (
+                    <SearchBook
+                      data={e.book}
+                      key={e._id}
+                      rate={e.star / e.nstar}
+                    />
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <div className="lg:col-span-3">

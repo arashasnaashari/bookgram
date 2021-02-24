@@ -155,7 +155,9 @@ const Compare = ({ data1, user }) => {
       <Menu row={true} />
       <Search />
       <div className="w-full mx-auto mb-20 h-96">
-        <Chart options={options} series={series} type="line" height="100%" />
+        {data1 && (
+          <Chart options={options} series={series} type="line" height="100%" />
+        )}
       </div>
       <button onClick={handleUpdate}>Update</button>
     </div>

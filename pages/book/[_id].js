@@ -56,7 +56,7 @@ const Compo = ({ data }) => {
   return (
     <Layout>
       <BookPP data={data} userId={user?.userId} />
-      <div style={{ direction: "rtl" }}>
+      <div style={{ direction: "rtl" }} className="mb-52 md:mb-auto">
         {user?.isLoggedIn && (
           <StarRatings
             ignoreInlineStyles={false}

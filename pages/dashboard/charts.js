@@ -72,10 +72,10 @@ const Compare = ({ data1, user }) => {
   }, []);
   return (
     <div className="bg-gray-50 font-Vazir dark:bg-gray-900 mb-52 dashboard_zoom">
-     <Nav image={user.profileURL} username={user.username} />
+      <Nav image={user.profileURL} username={user.username} />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         <div className="lg:col-span-9">
-          <Chart options={options} series={series} type="bar" />
+          {data1 && <Chart options={options} series={series} type="bar" />}
         </div>
 
         <div className="lg:col-span-3">

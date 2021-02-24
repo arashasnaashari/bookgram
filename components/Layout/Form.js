@@ -75,15 +75,23 @@ const Com = ({ shouldshow }) => {
               </h1>
             )}
             {shouldshow == "form" && (
-              <form>
+              <form
+                onSubmit={handleCreateComnt}
+                className="flex flex-col w-3/4 my-6 md:w-1/2"
+              >
                 <textarea
                   rows="4"
                   cols="50"
                   maxLength="50"
-                  placeholder="Describe yourself here..."
-                  className="border-2 border-gray-300 rounded-md my-3"
+                  placeholder="نظر خود رو بنویس .... "
+                  className="border-2 border-gray-300 rounded-md my-3 focus:outline-none bg-gray-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-500 font-Vazir"
                 ></textarea>
-                <button type="submit">ارسال</button>
+                <button
+                  type="submit"
+                  className="bg-gray-100 p-3 rounded-sm dark:bg-gray-600 dark:text-gray-200 hover:bg-opacity-30 font-Vazir"
+                >
+                  ارسال
+                </button>
               </form>
             )}
             {shouldshow == "reply" && <h1>reply {` >>`}</h1>}

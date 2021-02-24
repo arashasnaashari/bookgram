@@ -8,10 +8,11 @@ import dbConnect from "../../utils/dbConnect";
 import Reader from "../../model/reader";
 import Book from "../../model/Book";
 import withSession from "../../utils/session";
+import { data } from "autoprefixer";
 
 const Compare = ({ data1, user }) => {
   return (
-    <div className="bg-gray-50 font-Vazir dark:bg-gray-900 dashboard_zoom" >
+    <div className="bg-gray-50 font-Vazir dark:bg-gray-900 dashboard_zoom">
       <Nav image={user.profileURL} username={user.username} />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         <div className="lg:col-span-3">
@@ -50,8 +51,20 @@ export const getServerSideProps = withSession(async function ({ req, res }) {
       },
     })
     .lean();
+  let dataaaa;
+  if (usero.length > 0) {
+    dataaaa = usero;
+  } else {
+    dataaaa = [
+      {
+        date: [0],
+        time: [0],
+        pages: [0],
+      },
+    ];
+  }
   return {
-    props: { data1: JSON.stringify(usero), user: user },
+    props: { data1: JSON.stringify(dataaaa), user: user },
   };
 });
 
