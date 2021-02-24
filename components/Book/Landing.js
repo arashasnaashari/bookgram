@@ -6,7 +6,7 @@ const Compo = () => {
         style={{ direction: "rtl" }}
       >
         <div className="p-4 flex content-evenly flex-wrap">
-          <h1 className="font-IranianSans text-2xl md:text-5xl text-bookgram-head dark:bg-gray-200">
+          <h1 className="font-IranianSans text-2xl md:text-5xl text-bookgram-head dark:text-gray-200">
             کتابخانه خودت را بساز
           </h1>
           <p className="tex-base md:leading-8 md:text-xl md:break-words font-IranianSans">

@@ -46,7 +46,7 @@ const Compo = (props) => {
               className="bg-contain w-full h-full"
               style={{
                 backgroundImage:
-                  "url( http://naghdeketab.ir/files/site1/images/14/poaster_nghd_final.jpg)",
+                  "url(/img/naghd.jpg)",
               }}
             ></div>
           </div>
