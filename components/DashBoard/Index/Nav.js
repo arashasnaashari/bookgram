@@ -52,7 +52,7 @@ const Compare = ({ image, username }) => {
                 <div
                   className="py-1"
                   onClick={() => {
-                    fetch("http://localhost:3000/api/logout");
+                    fetch("https://bookgram.vercel.app/api/logout");
                     router.push("/");
                   }}
                 >

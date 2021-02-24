@@ -32,3 +32,18 @@ yarn-error.log*
 
 # vercel
 .vercel
+/pages/api/addtolib.js
+/pages/api/createblog.js
+/pages/api/createcomment.js
+/pages/api/deleteview.js
+/pages/api/follow.js
+/pages/api/like.js
+/pages/api/login.js
+/pages/api/logout.js
+/pages/api/read.js
+/pages/api/replytocomment.js
+/pages/api/replyview.js
+/pages/api/signin.js
+/pages/api/starbook.js
+/pages/api/upload.js
+/pages/api/users.js  

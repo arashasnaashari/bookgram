@@ -33,7 +33,7 @@ const Compo = ({ data }) => {
     l.preventDefault();
     if (typeof window !== "undefined") {
       if (localStorage.getItem(`like-${data._id}`) !== "true") {
-        const res = await fetch("http://localhost:3000/api/like", {
+        const res = await fetch("https://bookgram.vercel.app/api/like", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ bookId: data._id }),
@@ -52,14 +52,20 @@ const Compo = ({ data }) => {
 
   return (
     <Layout>
-      <div style={{ direction: "rtl" }} className="dark:text-gray-100 mb-52 md:mb-auto">
+      <div
+        style={{ direction: "rtl" }}
+        className="dark:text-gray-100 mb-52 md:mb-auto"
+      >
         <ShowData data={data.data} />
 
         <div className="flex flex-row">
           {data.tags.map((t) => {
             return (
               <div className="flex flex-row">
-                <a className="m-3 rounded-sm bg-gray-300 text-black px-3 py-1 " href={`/tag/${t}`}>
+                <a
+                  className="m-3 rounded-sm bg-gray-300 text-black px-3 py-1 "
+                  href={`/tag/${t}`}
+                >
                   {t}
                 </a>
               </div>
