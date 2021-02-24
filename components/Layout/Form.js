@@ -76,7 +76,6 @@ const Com = ({ shouldshow }) => {
             )}
             {shouldshow == "form" && (
               <form
-                onSubmit={handleCreateComnt}
                 className="flex flex-col w-3/4 my-6 md:w-1/2"
               >
                 <textarea
