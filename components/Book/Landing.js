@@ -6,10 +6,10 @@ const Compo = () => {
         style={{ direction: "rtl" }}
       >
         <div className="p-4 flex content-evenly flex-wrap">
-          <h1 className="font-IranianSans text-2xl md:text-5xl text-bookgram-head">
+          <h1 className="font-IranianSans text-2xl md:text-5xl text-bookgram-head dark:bg-gray-200">
             کتابخانه خودت را بساز
           </h1>
-          <p className="tex-base md:leading-8 md:text-xl md:break-words">
+          <p className="tex-base md:leading-8 md:text-xl md:break-words font-IranianSans">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
             استفاده از طراحان گرافیک است. چاپگرها و متون
           </p>

@@ -47,7 +47,7 @@ const Header = () => {
         <a href="/" className="p-2 hover:text-gray-800 dark:hover:text-white">
           <div className="w-8 md:hidden sm:w-11">
             <svg
-              className="stroke-current text-gray-500 "
+              className="stroke-current text-gray-500 hover:text-gray-50"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -69,7 +69,7 @@ const Header = () => {
         >
           <div className="w-8 md:hidden sm:w-11">
             <svg
-              className="stroke-current text-gray-500 "
+              className="stroke-current text-gray-500 hover:text-gray-50"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -91,7 +91,7 @@ const Header = () => {
         >
           <div className="w-8 md:hidden sm:w-11">
             <svg
-              className="stroke-current text-gray-500 "
+              className="stroke-current text-gray-500 hover:text-gray-50"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -113,7 +113,7 @@ const Header = () => {
         >
           <div className="w-8 md:hidden sm:w-11">
             <svg
-              className="stroke-current text-gray-500 "
+              className="stroke-current text-gray-500 hover:text-gray-50"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -135,7 +135,7 @@ const Header = () => {
         >
           <div className="w-8 md:hidden sm:w-11 mr-2">
             <svg
-              className="stroke-current text-gray-500 "
+              className="stroke-current text-gray-500 hover:text-gray-50"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"

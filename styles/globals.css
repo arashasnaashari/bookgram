@@ -97,6 +97,12 @@
   height: 320px;
   max-height: 100vh;
 }
+@media screen and (max-width: 800px) {
+  .img_slide {
+    width: 150px;
+    height: 150px;
+  }
+}
 .img_slide {
   width: 150px;
   height: 180px;

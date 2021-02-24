@@ -54,7 +54,7 @@ const Compo = ({ data }) => {
     <Layout>
       <div
         style={{ direction: "rtl" }}
-        className="dark:text-gray-100 mb-52 md:mb-auto"
+        className="dark:text-gray-100 mb-52 md:mb-auto font-Vazir"
       >
         <ShowData data={data.data} />
 

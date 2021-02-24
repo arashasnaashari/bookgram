@@ -39,7 +39,7 @@ const Compo = (props) => {
 
   return (
     <>
-      <div className="p-4 mt-5 flex flex-col lg:flex-row-reverse justify-between lg:w-4/5 lg:m-auto">
+      <div className="p-4 mt-5 flex flex-col lg:flex-row-reverse justify-between lg:w-4/5 lg:m-auto font-IranianSans">
         <div ref={sliderRef} className="keen-slider lg:w-2/3 w-full mb-3 ">
           <div className="keen-slider__slide number-slide1">
             <div

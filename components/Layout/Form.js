@@ -1,8 +1,11 @@
 import Popup from "reactjs-popup";
 import { useState, useContext } from "react";
 import StarRatings from "react-star-ratings";
+import { useRouter } from "next/router";
 
 const Com = ({ shouldshow }) => {
+  const router = useRouter();
+
   const [menu, Open] = useState(false);
   const [username, setUser] = useState("");
   const [loading, setLoading] = useState(false);
@@ -53,7 +56,7 @@ const Com = ({ shouldshow }) => {
         const data = await res.json();
         if (data.sign == true) {
           setLoading(false);
-          localStorage.setItem("userId", data.userId);
+          router.reload();
           // context.login(data.token, data.userId, data.username, "profile");
         } else {
           setLoading(false);
@@ -75,9 +78,7 @@ const Com = ({ shouldshow }) => {
               </h1>
             )}
             {shouldshow == "form" && (
-              <form
-                className="flex flex-col w-3/4 my-6 md:w-1/2"
-              >
+              <form className="flex flex-col w-3/4 my-6 md:w-1/2">
                 <textarea
                   rows="4"
                   cols="50"

@@ -89,8 +89,20 @@ export const getServerSideProps = withSession(async function ({ req, res }) {
       },
     })
     .lean();
+  let dataaaa;
+  if (usero.length > 0) {
+    dataaaa = usero;
+  } else {
+    dataaaa = [
+      {
+        date: [0],
+        time: [0],
+        pages: [0],
+      },
+    ];
+  }
   return {
-    props: { data1: JSON.stringify(usero), user: user },
+    props: { data1: JSON.stringify(dataaaa), user: user },
   };
 });
 

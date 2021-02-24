@@ -57,7 +57,7 @@ const Compare = ({ image, username }) => {
                   }}
                 >
                   <a
-                    href="#"
+                    href="/"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 lg:hover: hover:text-gray-900"
                     role="menuitem"
                   >

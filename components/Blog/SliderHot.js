@@ -26,7 +26,7 @@ const A = ({ data }) => {
   });
 
   return (
-    <div className="lg:hidden">
+    <div className="lg:hidden dark:text-white">
       <div className="flex justify-between p-3 mb-2">
         <div></div>
         <div>
