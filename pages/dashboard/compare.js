@@ -183,7 +183,7 @@ export const getServerSideProps = withSession(async function ({ req, res }) {
       },
     })
     .lean();
-  if (usero.length > 0) {
+  if (usero) {
     return {
       props: { data1: JSON.stringify(usero), user: user },
     };
