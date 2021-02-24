@@ -88,6 +88,7 @@
 @media screen and (max-width: 460px) {
   .dashboard_zoom {
     zoom: 0.7;
+    padding: 20px;
   }
 }
 

@@ -26,14 +26,12 @@ const Compare = ({ data1, user }) => {
               </button>
             </div>
             <div className="flex justify-around items-center">
-              {!data1 == "no" && (
-                <img
-                  src={`${JSON.parse(data1)[0].book.image}`}
-                  alt="s"
-                  className="h-1/2 md:h-auto"
-                  width="100"
-                />
-              )}
+              <img
+                src={`${JSON.parse(data1)[0].book.image}`}
+                alt="s"
+                className="h-1/2 md:h-auto"
+                width="100"
+              />
             </div>
           </div>
 
@@ -45,21 +43,20 @@ const Compare = ({ data1, user }) => {
               </h1>
             </div>
           </div>
-          {!data1 == "no" && (
-            <div style={{ direction: "rtl" }}>
-              <div className="flex flex-row flex-wrap p-5 justify-around">
-                {JSON.parse(data1).map((e) => {
-                  return (
-                    <SearchBook
-                      data={e.book}
-                      key={e._id}
-                      rate={e.star / e.nstar}
-                    />
-                  );
-                })}
-              </div>
+
+          <div style={{ direction: "rtl" }}>
+            <div className="flex flex-row flex-wrap p-5 justify-around">
+              {JSON.parse(data1).map((e) => {
+                return (
+                  <SearchBook
+                    data={e.book}
+                    key={e._id}
+                    rate={e.star / e.nstar}
+                  />
+                );
+              })}
             </div>
-          )}
+          </div>
         </div>
 
         <div className="lg:col-span-3">
@@ -89,15 +86,21 @@ export const getServerSideProps = withSession(async function ({ req, res }) {
       },
     })
     .lean();
+  let dataaaa;
   if (usero.length > 0) {
-    return {
-      props: { data1: JSON.stringify(usero), user: user },
-    };
+    dataaaa = usero;
   } else {
-    return {
-      props: { data1: "no", user: user },
-    };
+    dataaaa = [
+      {
+        image: "",
+        title: "",
+        _id: "",
+      },
+    ];
   }
+  return {
+    props: { data1: JSON.stringify(dataaaa), user: user },
+  };
 });
 
 export default Compare;
