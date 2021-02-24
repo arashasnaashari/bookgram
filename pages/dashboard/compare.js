@@ -155,7 +155,7 @@ const Compare = ({ data1, user }) => {
       <Menu row={true} />
       <Search />
       <div className="w-full mx-auto mb-20 h-96">
-        {data1 && (
+        {!data1 == "no" && (
           <Chart options={options} series={series} type="line" height="100%" />
         )}
       </div>
@@ -183,21 +183,15 @@ export const getServerSideProps = withSession(async function ({ req, res }) {
       },
     })
     .lean();
-    let dataaaa;
-    if (usero.length > 0) {
-      dataaaa = usero;
-    } else {
-      dataaaa = [
-        {
-          date: [0],
-          time: [0],
-          pages: [0],
-        },
-      ];
-    }
-  return {
-    props: { data1: JSON.stringify(dataaaa), user: user },
-  };
+  if (usero.length > 0) {
+    return {
+      props: { data1: JSON.stringify(usero), user: user },
+    };
+  } else {
+    return {
+      props: { data1: "no", user: user },
+    };
+  }
 });
 
 export default Compare;

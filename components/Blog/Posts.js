@@ -42,7 +42,7 @@ const Compo = ({ data, neww }) => {
             <>
               <a href={`/blog/${e._id}`}>
                 <div
-                  className="mb-4 flex flex-row-reverse flex-nowrap justify-between h-44 lg:h-48 "
+                  className="mb-4 flex flex-row-reverse flex-nowrap justify-between h-44 lg:h-48 dark:text-gray-200"
                   style={{ direction: "rtl" }}
                 >
                   <div className="w-2/3 flex flex-wrap content-evenly">

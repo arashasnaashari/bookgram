@@ -26,7 +26,7 @@ const Compare = ({ data1, user }) => {
               </button>
             </div>
             <div className="flex justify-around items-center">
-              {data1 && (
+              {!data1 == "no" && (
                 <img
                   src={`${JSON.parse(data1)[0].book.image}`}
                   alt="s"
@@ -45,7 +45,7 @@ const Compare = ({ data1, user }) => {
               </h1>
             </div>
           </div>
-          {data1 && (
+          {!data1 == "no" && (
             <div style={{ direction: "rtl" }}>
               <div className="flex flex-row flex-wrap p-5 justify-around">
                 {JSON.parse(data1).map((e) => {
@@ -89,21 +89,15 @@ export const getServerSideProps = withSession(async function ({ req, res }) {
       },
     })
     .lean();
-  let dataaaa;
   if (usero.length > 0) {
-    dataaaa = usero;
+    return {
+      props: { data1: JSON.stringify(usero), user: user },
+    };
   } else {
-    dataaaa = [
-      {
-        date: [0],
-        time: [0],
-        pages: [0],
-      },
-    ];
+    return {
+      props: { data1: "no", user: user },
+    };
   }
-  return {
-    props: { data1: JSON.stringify(dataaaa), user: user },
-  };
 });
 
 export default Compare;
