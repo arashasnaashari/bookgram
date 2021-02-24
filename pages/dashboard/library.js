@@ -92,9 +92,11 @@ export const getServerSideProps = withSession(async function ({ req, res }) {
   } else {
     dataaaa = [
       {
-        image: "",
-        title: "",
-        _id: "",
+        book: {
+          image: "",
+          title: "",
+          _id: "",
+        },
       },
     ];
   }
