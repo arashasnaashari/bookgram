@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:publisher>جامه دران</dc:publisher>
+    <meta name="calibre:rating" content="6.00"/>
+    <dc:description>&lt;div&gt;&lt;p&gt;This classic Persian story also resonates with adults. Behrangi, one of Iran's greatest writers, wrote stories that were not "fairy tales" but presented everyday life in an educational manner. His stories were considered symbolic of a reality of poor people who survived in difficult conditions under a repressive system. In this story, a little black fish seeks to understand the greater sea. It represents courage and the desire for knowledge, against age-old ignorance and fear - even if in the end a high price may have to be paid. &lt;br&gt;&lt;/p&gt;&lt;p&gt;There are two bonus children's books included: one is a book of stickers and teaches kids to match letters with pictures. It's a great way to help children learn the Persian alphabet. The other book features pop-up illustrations of the city and culture of Yazd.&lt;/p&gt;&lt;/div&gt;</dc:description>
+    <dc:language>en</dc:language>
+    <dc:creator opf:file-as="Behrangi, Samad" opf:role="aut">صمد بهرنگی</dc:creator>
+    <meta name="calibre:timestamp" content="2013-08-02T23:54:41+00:00"/>
+    <meta name="calibre:title_sort" content="Mahi Siyahe Kuchulu"/>
+    <meta name="cover" content="cover"/>
+    <dc:date>1968-01-01T05:00:00+00:00</dc:date>
+    <dc:contributor opf:role="bkp">calibre (1.20.0) [http://calibre-ebook.com]</dc:contributor>
+    <dc:title>ماهی سیاه کوچولو</dc:title>
+    <dc:identifier opf:scheme="ISBN">9649051759</dc:identifier>
+    <dc:identifier opf:scheme="GOODREADS">74862</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">4f1ac2c1-d3a1-4e22-86c0-8d0fefdd53be</dc:identifier>
+    <dc:identifier opf:scheme="calibre">4f1ac2c1-d3a1-4e22-86c0-8d0fefdd53be</dc:identifier>
+    <dc:subject>Classics</dc:subject>
+    <dc:subject>Childrens</dc:subject>
+  </metadata>
+  <manifest>
+    <item href="cover.jpeg" id="cover" media-type="image/jpeg" properties="cover-image"/>
+    <item href="OEBPS/Text/Section0001.xhtml" id="Section0001.xhtml" media-type="application/xhtml+xml"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="titlepage.xhtml" id="titlepage" media-type="application/xhtml+xml"/>
+    <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>
+    <item href="plugininfo.kte" id="id" media-type="application/json"/>
+    <item href="kte-css/hyphenation.css" id="id1" media-type="text/css"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="titlepage"/>
+    <itemref idref="Section0001.xhtml"/>
+  </spine>
+  <guide>
+    <reference href="titlepage.xhtml" title="Cover" type="cover"/>
+  </guide>
+</package>
