@@ -83,7 +83,7 @@ const Compo = () => {
                 <>
                   <div>
                     <a href={`/searchbook/${e.text}/0/7`}>
-                      <img src={e.img} width={width}></img>
+                      <img src={e.img} width="70"></img>
                       <h1 className="text-lg text-center dark:text-white">
                         {e.text}
                       </h1>
