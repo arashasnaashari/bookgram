@@ -64,6 +64,7 @@
   position: absolute;
   filter: blur(2);
 } */
+
 @media (min-width: 768px) {
   .darklogo {
     width: 40px;
@@ -96,7 +97,6 @@
     padding: 20px;
   }
 }
-
 [class^="number-slide"],
 [class*=" number-slide"] {
   display: flex;
