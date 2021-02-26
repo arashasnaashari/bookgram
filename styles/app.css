@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  direction: rtl;
+}
+body,
+html {
+  background-color: #f3e6dd;
+}
+.container {
+  width: 97%;
+  margin: 10px auto;
+  background: #f9f9f9;
+  border-radius: 10px 10px 10px 10px;
+  padding: 0 auto;
+}
+.landing {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  background-color: #f3e6dd;
+  margin: 0 auto;
+}
+.landing h1 {
+  font-size: 4vw;
+}
+.landing p {
+  font-size: 2vw;
+  width: 30vw;
+}
+.landing img {
+  width: 10vw;
+}
+.landing button {
+  font-size: 1vw;
+}
+/* IranianSans */
+/* Vazir */
+/* BMitra */
+/* SegoeUi */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@font-face {
+  font-family: "Vazir";
+  src: url("../fonts/vaziri/Vazir.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/vaziri/Vazir.ttf") format("truetype"),
+    url("../fonts/vaziri/Vazir.woff") format("woff");
+
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IranianSans";
+  src: url("../fonts/iransans/IranianSans.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/iransans/IranianSans.otf") format("opentype"),
+    url("../fonts/iransans/IranianSans.svg") format("svg"),
+    url("../fonts/iransans/IranianSans.ttf") format("truetype"),
+    url("../fonts/iransans/IranianSans.woff") format("woff");
+
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BMitra";
+  src: url("../fonts/B-mitra/BMitra.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/B-mitra/BMitra.otf") format("opentype"),
+    url("../fonts/B-mitra/BMitra.svg") format("svg"),
+    url("../fonts/B-mitra/BMitra.ttf") format("truetype"),
+    url("../fonts/B-mitra/BMitra.woff") format("woff"),
+    url("../fonts/B-mitra/BMitra.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SegoeUi";
+  src: url("../fonts/Segoe Ui/Segoeui.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/Segoe Ui/Segoeui.otf") format("opentype"),
+    url("../fonts/Segoe Ui/Segoeui.svg") format("svg"),
+    url("../fonts/Segoe Ui/Segoeui.ttf") format("truetype"),
+    url("../fonts/Segoe Ui/Segoeui.woff") format("woff"),
+    url("../fonts/Segoe Ui/Segoeui.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

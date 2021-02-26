@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html id="bibi">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title> </title>
+
+    <link id="bibi-style" rel="stylesheet" href="resources/styles/bibi.css" />
+    <link
+      id="bibi-dress"
+      rel="stylesheet"
+      href="wardrobe/everyday/bibi.dress.css"
+    />
+    <script id="bibi-script" src="resources/scripts/bibi.js"></script>
+    <script
+      id="bibi-preset"
+      src="presets/default.js"
+      data-bibi-bookshelf=""
+    ></script>
+    <style>
+      body {
+        /* filter: sepia(100%); */
+        /* sepia(100%) */
+        /* grayscale(50%); */
+        /* invert(1) hue-rotate(197deg) */
+        background-color: antiquewhite;
+      }
+      * {
+        /* background-color: khaki !important; */
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+      }
+    </style>
+  </head>
+
+  <body data-bibi-book="" oncontextmenu="return false">
+    <script>
+      // document.body.style.display = "none";
+      window.addEventListener("keydown", (e) => {
+        if (e.key == "PrintScreen") {
+          navigator.clipboard.writeText("");
+          alert("s!");
+        }
+      });
+      window.oncontextmenu = new Function("return false;");
+      /** TO DISABLE PRINTS WHIT CTRL+P **/
+      window.addEventListener("keydown", (e) => {
+        if (e.shiftKey || e.key == "s" || e.key == "p") {
+          //|| e.ctrlKey
+          alert("This section is not allowed to print or export to PDF");
+          e.cancelBubble = true;
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        }
+      });
+    </script>
+  </body>
+</html>
