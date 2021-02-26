@@ -52,7 +52,7 @@ const Compare = ({ image, username }) => {
                 <div
                   className="py-1"
                   onClick={() => {
-                    fetch("http://localhost:3000/api/logout");
+                    fetch("https://bookgram.vercel.app/api/logout");
                     router.push("/");
                   }}
                 >
@@ -69,8 +69,7 @@ const Compare = ({ image, username }) => {
           </div>
           <div>
             <button className="mr-10 text-white dark:bg-bookgram-sabz bg-black px-1 py-3 rounded-md hover:bg-opacity-50">
-<a href="/blog/create">
-              نوشتن پست {"<<"}{" "}</a>
+              <a href="/blog/create">نوشتن پست {"<<"} </a>
             </button>
           </div>
         </div>

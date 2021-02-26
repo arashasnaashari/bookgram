@@ -33,7 +33,7 @@ const Compo = ({ data }) => {
     l.preventDefault();
     if (typeof window !== "undefined") {
       if (localStorage.getItem(`like-${data._id}`) !== "true") {
-        const res = await fetch("http://localhost:3000/api/like", {
+        const res = await fetch("https://bookgram.vercel.app/api/like", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ bookId: data._id }),
