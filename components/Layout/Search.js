@@ -44,7 +44,7 @@ const Compo = () => {
               strokeLinejoin="round"
               strokeWidth="2"
               viewBox="0 0 24 24"
-              className="w-6 h-6"
+              className="ml-3 w-6 h-6 text-gray-500"
             >
               <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
@@ -55,8 +55,8 @@ const Compo = () => {
             type="search"
             name="q"
             onChange={(t) => setText(t.target.value)}
-            className="bg-bookgram-search py-2 text-sm rounded-md pl-10 focus:outline-none w-full h-12 placeholder-bookgram-menu font-IranianSans"
-            placeholder="جستجو کنید ..."
+            className="bg-bookgram-search py-2 text-sm rounded-md pl-10 focus:outline-none w-full h-12 placeholder-bookgram-menu font-IranianSans pr-3"
+            placeholder="جستوجو بر اساس نام کتاب ..."
           />
         </form>
       </div>

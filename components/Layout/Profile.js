@@ -26,7 +26,7 @@ const Compo = () => {
             >
               {user?.isLoggedIn && (
                 <div
-                  className="w-10 lg:w-30 h-20 lg:h-30 bg-contain bg-no-repeat bg-center mx-auto"
+                  className="w-10 lg:w-30 h-20 lg:h-30 bg-contain bg-no-repeat bg-center mx-auto cursor-pointer"
                   style={{ backgroundImage: `url(${user?.profileURL})` }}
                   onClick={() => Open((p) => !p)}
                 ></div>
@@ -34,7 +34,7 @@ const Compo = () => {
               {!user?.isLoggedIn && (
                 <div className="w-10">
                   <svg
-                    className="stroke-current text-gray-700 "
+                    className="stroke-current text-gray-700 cursor-pointer"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"

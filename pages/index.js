@@ -8,7 +8,7 @@ import BookIntro from "../components/Book/BookIntro";
 import LayOut from "../components/Layout/Layout";
 
 import { useState } from "react";
-function Home({ hotbook, newbook, bestsellbook }) {
+function Home({ bestsellbook, newbook, hotbook }) {
   return (
     <LayOut>
       <Landing />

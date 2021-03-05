@@ -58,6 +58,12 @@
   font-weight: normal;
   font-style: normal;
 }
+/* .popup_box {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  filter: blur(2);
+} */
 
 @media (min-width: 768px) {
   .darklogo {
@@ -91,23 +97,13 @@
     padding: 20px;
   }
 }
-
 [class^="number-slide"],
 [class*=" number-slide"] {
   display: flex;
   height: 320px;
   max-height: 100vh;
 }
-@media screen and (max-width: 800px) {
-  .img_slide {
-    width: 150px;
-    height: 150px;
-  }
-}
-.img_slide {
-  width: 150px;
-  height: 180px;
-}
+
 /* .number-slide1 {
   background: rgb(64, 175, 255);
   background: linear-gradient(

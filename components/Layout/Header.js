@@ -1,11 +1,15 @@
 import { useState, useContext } from "react";
-
+import Popup from "reactjs-popup";
+import Daste from "../category/index";
 import Search from "./Search";
 import Categoury from "./Categoury";
 import Profile from "./Profile";
 import Dark from "./Dark";
-
+import Contx from "../../context/auth-context";
 const Header = () => {
+  const [open, setOpen] = useState(false);
+  // const closeModal = () => setOpen(false);
+  const cntx = useContext(Contx);
   // const OpenMenuPannel = () => {
   //   document.getElementById(
   //     "myDIV"
@@ -20,12 +24,39 @@ const Header = () => {
     <div style={{ direction: "rtl" }}>
       <div className="grid grid-cols-9 gap-3 m-2 md:grid-flow-col md:grid-cols-12">
         <div className="col-span-3 md:col-span-3">
-          <div className="flex items-center h-28 justify-around">
-            <Profile />
-            <Dark />
+          <div className="flex items-center h-28 justify-start ">
+            {/* <button className="text-aras dark:text-aras focus:outline-none">
+              <div className="border-gray-900 rounded-xl md:w-10 w-10 text-2xl font-bold">
+                <h1>FA</h1>
+              </div>
+            </button>
+            <button className="text-aras dark:text-aras focus:outline-none">
+              <div className="border-gray-900 rounded-xl md:w-10 w-10">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  className="stroke-current text-gray-500"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              </div>
+            </button> */}
+            <div className="md:ml-6">
+              <Dark />
+            </div>
+            <div className="md:ml-6">
+              <Profile />
+            </div>
           </div>
         </div>
-        <div className=" md:col-span-9 col-span-4">
+        <div className="md:col-span-9 col-span-4">
           <div className="flex items-center h-28 ">
             <Search />
           </div>
@@ -40,11 +71,11 @@ const Header = () => {
       </div>
 
       <div
-        className="sm:text-lg z-40 flex flex-row flex-nowrap fixed justify-around bottom-0 h-20 md:h-auto 
-      bg-bookgram text-gray-900 md:bg-white dark:bg-gray-800 md:text-bookgram-menu dark:text-gray-500
-       md:dark:bg-gray-900 w-full left-0 rounded-md items-center font-Vazir md:w-auto md:static md:pb-7 md:text-xl border-t-2 border-gray-900 md:border-0 text-xs text-center"
+        className="sm:text-lg z-40 flex flex-row flex-nowrap fixed justify-around md:justify-between bottom-0 h-20 md:h-auto 
+      bg-bookgram text-gray-500 md:bg-white dark:bg-gray-800 md:text-bookgram-menu dark:text-gray-500
+       md:dark:bg-gray-900 w-full left-0 rounded-md items-center font-Vazir md:3/4 xl:w-1/2 md:static md:pb-7 md:text-xl border-t-2 border-gray-900 md:border-0 text-xs text-center md:mx-auto font-semibold"
       >
-        <a href="/" className="p-2 hover:text-gray-800 dark:hover:text-white">
+        <a href="/" className=" md:hover:text-gray-800 dark:hover:text-white">
           <div className="w-8 md:hidden sm:w-11">
             <svg
               className="stroke-current text-gray-500 dark:hover:text-gray-50"
@@ -63,31 +94,10 @@ const Header = () => {
           </div>
           خانه
         </a>
-        <a
-          href="/blog"
-          className="p-2 hover:text-gray-800 dark:hover:text-white"
-        >
-          <div className="w-8 md:hidden sm:w-11">
-            <svg
-              className="stroke-current text-gray-500 dark:hover:text-gray-50"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-              />
-            </svg>
-          </div>
-          بلاگ
-        </a>
+
         <a
           href="/about"
-          className="p-2 hover:text-gray-800 dark:hover:text-white"
+          className=" md:hover:text-gray-800 dark:hover:text-white"
         >
           <div className="w-8 md:hidden sm:w-11">
             <svg
@@ -107,9 +117,72 @@ const Header = () => {
           </div>
           درباره ما
         </a>
+        <div className=" flex items-center">
+          <a
+            href="/category"
+            className=" md:hover:text-gray-800 dark:hover:text-white"
+          >
+            <div className="w-8 md:hidden sm:w-11 mr-2">
+              <svg
+                className="stroke-current text-gray-500 dark:hover:text-gray-50"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                />
+              </svg>
+            </div>
+            دسته بندی
+          </a>
+          <span
+            onClick={() => {
+              setOpen(true);
+              cntx.setModel();
+              console.log(open);
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="w-5 h-5 hidden md:block"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <Popup
+              open={open}
+              closeOnDocumentClick
+              onClose={() => {
+                setOpen(false);
+                cntx.clozeModal();
+              }}
+              modal
+            >
+              <div
+                onClick={() => {
+                  setOpen(false);
+                  cntx.clozeModal();
+                }}
+              >
+                <Daste />
+              </div>
+            </Popup>
+          </span>
+        </div>
+
         <a
           href="/dashboard"
-          className="p-2 hover:text-gray-800 dark:hover:text-white"
+          className=" md:hover:text-gray-800 dark:hover:text-white"
         >
           <div className="w-8 md:hidden sm:w-11">
             <svg
@@ -129,11 +202,12 @@ const Header = () => {
           </div>
           دشبورد
         </a>
+
         <a
-          href="/category"
-          className="p-2 hover:text-gray-800 dark:hover:text-white "
+          href="/blog"
+          className=" md:hover:text-gray-800 dark:hover:text-white"
         >
-          <div className="w-8 md:hidden sm:w-11 mr-2">
+          <div className="w-8 md:hidden sm:w-11">
             <svg
               className="stroke-current text-gray-500 dark:hover:text-gray-50"
               xmlns="http://www.w3.org/2000/svg"
@@ -145,14 +219,11 @@ const Header = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
               />
             </svg>
           </div>
-          دسته بندی
-          {/* <button id="myDIV" onClick={() => OpenMenuPannel()}>
-            دسته بندی
-          </button> */}
+          بلاگ
         </a>
       </div>
       {/* <div

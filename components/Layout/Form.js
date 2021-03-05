@@ -108,7 +108,7 @@ const Com = ({ shouldshow }) => {
             {!shouldshow && (
               <div className="w-10">
                 <svg
-                  className="stroke-current text-gray-700 "
+                  className="stroke-current text-gray-700 cursor-pointer"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"

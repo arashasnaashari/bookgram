@@ -1,4 +1,3 @@
-import LayOut from "../components/Layout/Layout";
 const Compo = () => {
   const arrayOfDaste = [
     {
@@ -71,31 +70,28 @@ const Compo = () => {
     },
   ];
   return (
-    <>
-      <LayOut>
-        <div>
-          <div
-            style={{ direction: "rtl" }}
-            className={`font-IranianSans mb-20 grid grid-cols-3 gap-4 p-4 `}
-          >
-            {arrayOfDaste.map((e) => {
-              return (
-                <>
-                  <div>
-                    <a href={`/searchbook/${e.text}/0/7`}>
-                      <img src={e.img} width="70"></img>
-                      <h1 className="text-lg text-center dark:text-white">
-                        {e.text}
-                      </h1>
-                    </a>
-                  </div>
-                </>
-              );
-            })}
-          </div>
-        </div>
-      </LayOut>
-    </>
+    <div className="bg-gray-400 bg-opacity-70">
+      <div
+        style={{ direction: "rtl", height: "100vh" }}
+        className={`font-IranianSans mb-20 grid gap-4 p-4 md:grid-cols-4 lg:grid-cols-5`}
+      >
+        {arrayOfDaste.map((e) => {
+          return (
+            <>
+              <div>
+                <a href={`/searchbook/${e.text}/0/7`}>
+                  <div
+                    style={{ background: `url(${e.img})` }}
+                    className="w-32 h-32 rounded-2xl bg-contain"
+                  ></div>
+                  <h1 className="text-lg text-center">{e.text}</h1>
+                </a>
+              </div>
+            </>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 

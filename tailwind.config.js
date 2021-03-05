@@ -1,5 +1,5 @@
 const colors = require("tailwindcss/colors");
-
+const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   darkMode: "media",
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
@@ -9,7 +9,11 @@ module.exports = {
       IranianSans: ["IranianSans"],
       Vazir: ["Vazir"],
     },
-    extend: {},
+    extend: {
+      backgroundImage: (theme) => ({
+        landing: "url('/img/show.png')",
+      }),
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -32,9 +36,13 @@ module.exports = {
         blueg: "#a7c5f4",
         yellow: "#dbb714",
         green: "#17e327",
-        sabz:"#03DAC6"
+        sabz: "#03DAC6",
       },
       black: colors.black,
+    },
+    screens: {
+      xs: { max: "768px" },
+      ...defaultTheme.screens,
     },
   },
   variants: {
