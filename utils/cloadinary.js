@@ -9,7 +9,7 @@ module.exports = { cloudinary };
 
 // cloudinary.uploader.upload("sample.jpg", {"crop":"limit","tags":"samples","width":3000,"height":2000}, function(result) { console.log(result) });
 
-//blog :\
+//blog :\//
 // https://github.com/BomdiZane/EditorJS-React-Renderer
 
 // https://github.com/moveyourdigital/editorjs-blocks-react-renderer
