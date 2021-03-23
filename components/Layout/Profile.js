@@ -78,7 +78,7 @@ const Compo = () => {
                   className="py-1"
                   onClick={() => {
                     fetch("https://bookgram.vercel.app/api/logout");
-                    router.push("/");
+                    router.reload();
                   }}
                 >
                   <a

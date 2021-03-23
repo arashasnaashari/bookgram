@@ -1,17 +1,24 @@
 import Link from "next/link";
-const Compo = ({ data, name ,name1}) => {
+import TimeAgo from "timeago-react";
+import * as timeago from "timeago.js";
+import fa from "timeago.js/lib/lang/fa";
+const Compo = ({ data, name, name1 }) => {
+  timeago.register("fa", fa);
+
   return (
     <div style={{ direction: "rtl" }}>
       <div className="bg-gray-800 h-32 justify-center flex pt-10">
-        <h1 className="text-3xl text-white">نتایج جستوجو برای {name1} : {name}</h1>
+        <h1 className="text-3xl text-white">
+          نتایج جستوجو برای {name1} : {name}
+        </h1>
       </div>
       <div className="lg:w-1/2">
         {data.map((e) => {
           return (
             <>
-              <Link href={`/blog/${e._id}`}>
+              <a href={`/blog/${e._id}`}>
                 <div
-                  className="mb-4 flex flex-row-reverse flex-nowrap justify-between h-44 lg:h-48 "
+                  className="mb-4 flex flex-row-reverse flex-nowrap justify-between h-44 lg:h-48 dark:text-gray-200"
                   style={{ direction: "rtl" }}
                 >
                   <div className="w-2/3 flex flex-wrap content-evenly">
@@ -32,14 +39,18 @@ const Compo = ({ data, name ,name1}) => {
                       ></div>
                       <div>
                         <h1 className="text-xs pr-2 text-gray-700">
-                          {e.creator.username}
+                          <a href={`/user/@${e.creator.username}`}>
+                            {e.creator.username}
+                          </a>
                         </h1>
-                        <h1 className="text-xs pr-2 text-gray-700">{e.date}</h1>
+                        <h1 className="text-xs pr-2 text-gray-700">
+                          <TimeAgo datetime={e.date} locale="fa" />
+                        </h1>
                       </div>
                     </div>
                   </div>
                 </div>
-              </Link>
+              </a>
               <div
                 style={{
                   width: "90%",

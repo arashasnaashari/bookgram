@@ -63,7 +63,9 @@ const Compo = ({ data, neww }) => {
                       ></div>
                       <div>
                         <h1 className="text-xs pr-2 text-gray-700">
-                          {e.creator.username}
+                          <a href={`/user/@${e.creator.username}`}>
+                            {e.creator.username}
+                          </a>
                         </h1>
                         <h1 className="text-xs pr-2 text-gray-700">
                           <TimeAgo datetime={e.date} locale="fa" />

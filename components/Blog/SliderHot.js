@@ -52,7 +52,9 @@ const A = ({ data }) => {
                     <TimeAgo datetime={e.date} locale="fa" />{" "}
                     <span className="text-5xl">.</span>{" "}
                     <span className="bg-bookgram-badge text-white px-2 rounded-md">
-                      {e.creator.username}
+                      <a href={`/user/@${e.creator.username}`}>
+                        {e.creator.username}
+                      </a>
                     </span>
                   </span>
                   <Link href={`/blog/${e._id}`}>

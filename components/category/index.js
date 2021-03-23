@@ -70,28 +70,21 @@ const Compo = () => {
     },
   ];
   return (
-    <div className="bg-gray-400 bg-opacity-70">
-      <div
-        style={{ direction: "rtl", height: "100vh" }}
-        className={`font-IranianSans mb-20 grid gap-4 p-4 md:grid-cols-4 lg:grid-cols-5`}
-      >
-        {arrayOfDaste.map((e) => {
-          return (
-            <>
-              <div>
-                <a href={`/searchbook/${e.text}/0/7`}>
-                  <div
-                    style={{ background: `url(${e.img})` }}
-                    className="w-32 h-32 rounded-2xl bg-contain"
-                  ></div>
-                  <h1 className="text-lg text-center">{e.text}</h1>
-                </a>
-              </div>
-            </>
-          );
-        })}
-      </div>
-    </div>
+    <>
+      {arrayOfDaste.map((e) => {
+        return (
+          <>
+            <a href={`/searchbook/${e.text}/0/7`}>
+              <div
+                style={{ background: `url(${e.img})` }}
+                className="w-32 h-32 rounded-2xl bg-contain"
+              ></div>
+              <h1 className="text-lg text-center">{e.text}</h1>
+            </a>
+          </>
+        );
+      })}
+    </>
   );
 };
 

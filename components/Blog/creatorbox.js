@@ -20,7 +20,9 @@ const Compo = ({ data, userId }) => {
           ></div>
         </div>
         <div className="mr-4">
-          <h1>{data.username}</h1>
+          <h1>
+            <a href={`/user/@${data.username}`}>{data.username}</a>
+          </h1>
           <h1 className="text-xs">درباره من</h1>
         </div>
         <div className="mr-4">

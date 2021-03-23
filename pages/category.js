@@ -73,26 +73,24 @@ const Compo = () => {
   return (
     <>
       <LayOut>
-        <div>
-          <div
-            style={{ direction: "rtl" }}
-            className={`font-IranianSans mb-20 grid grid-cols-3 gap-4 p-4 `}
-          >
-            {arrayOfDaste.map((e) => {
-              return (
-                <>
-                  <div>
-                    <a href={`/searchbook/${e.text}/0/7`}>
-                      <img src={e.img} width="70"></img>
-                      <h1 className="text-lg text-center dark:text-white">
-                        {e.text}
-                      </h1>
-                    </a>
-                  </div>
-                </>
-              );
-            })}
-          </div>
+        <div
+          style={{ direction: "rtl" }}
+          className={`font-IranianSans mb-20 grid grid-cols-3 md:grid-cols-4 gap-4 p-4 `}
+        >
+          {arrayOfDaste.map((e) => {
+            return (
+              <>
+                <div>
+                  <a href={`/searchbook/${e.text}/0/7`}>
+                    <img src={e.img} className="mx-auto"></img>
+                    <h1 className="text-lg text-center dark:text-white">
+                      {e.text}
+                    </h1>
+                  </a>
+                </div>
+              </>
+            );
+          })}
         </div>
       </LayOut>
     </>

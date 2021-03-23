@@ -26,12 +26,14 @@ const A = ({ data }) => {
   });
   return (
     <>
-      <div className="flex justify-between">
+      <div className="flex justify-between p-3 mb-2">
         <div>
-          <h1>محبوب</h1>
+          <a className="text-gray-300 text-sm">{" <<"}بیشتر</a>
         </div>
         <div>
-          <a>بیشتر</a>
+          <h1 className="font-Vazir text-2xl font-bold dark:text-gray-100">
+            پرفروش ها
+          </h1>
         </div>
       </div>
       <div ref={sliderRef} className="keen-slider">

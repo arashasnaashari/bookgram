@@ -16,7 +16,7 @@ const Layout = (props) => {
           {/* <Footer /> */}
         </div>
       ) : (
-        <div className="bg-white p-2 md:p-7 rounded-md dark:bg-gray-900">
+        <div className="bg-white p-2 md:px-7 rounded-2xl dark:bg-gray-900">
           <Header />
           {props.children}
           {/* <Footer /> */}

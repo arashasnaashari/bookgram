@@ -11,10 +11,25 @@ class Editor extends React.Component {
       tag1: "",
       tag2: "",
       tag3: "",
+      title: "",
+      body: "",
     };
   }
   async componentDidMount() {
     this.initEditor();
+    setInterval(() => {
+      const allPath = document.querySelectorAll("path");
+      const arrayed = Object.entries(allPath);
+      let result = [];
+      arrayed.map((e) => {
+        result.push(e[1]);
+      });
+      const hamechishode = result.slice(8, result.length);
+
+      hamechishode.map((ee) => {
+        return (ee.style.color = "black");
+      });
+    }, 1000);
   }
 
   initEditor = () => {
@@ -151,8 +166,8 @@ class Editor extends React.Component {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          title: title.data.text,
-          body: body.data.text,
+          title: this.state.title,
+          body: this.state.body,
           image: image.data.file.url,
           userId: this.props.user.userId,
           data1: data1,
@@ -173,31 +188,80 @@ class Editor extends React.Component {
   render() {
     return (
       <Layout>
-        {console.log(this.props.user.userId)}
+        {/* Editor */}
+        <h1 className="font-IranianSans text-2xl text-right my-5 dark:text-white">
+          نوشته خود را بنویسید
+        </h1>
         <div
           id={"editorjs"}
           onChange={(e) => this.onChange(e)}
-          style={{ direction: "rtl", backgroundColor: "lightgray" }}
+          style={{ direction: "rtl" }}
+          className="w-4/5 bg-gray-100 border-gray-400 border-2 mx-auto rounded-lg"
         ></div>
-        <button onClick={(e) => this.onSave(e)}>Save</button>
-        <input
-          placeholder="تگ 1"
-          type="text"
-          className="p-2 bg-gray-100 mb-2"
-          onChange={(e) => this.setState({ tag1: e.target.value })}
-        />
-        <input
-          placeholder="تگ 2"
-          type="text"
-          className="p-2 bg-gray-100 mb-2"
-          onChange={(e) => this.setState({ tag2: e.target.value })}
-        />
-        <input
-          placeholder="تگ 3"
-          type="text"
-          className="p-2 bg-gray-100 mb-2"
-          onChange={(e) => this.setState({ tag3: e.target.value })}
-        />
+
+        {/* Tags */}
+        <h1 className="font-IranianSans text-2xl text-right my-5 dark:text-white">
+          برای نوشته خود تگ انتخاب کنید
+        </h1>
+        <div
+          className="flex flex-col bg-gray-100 border-gray-400 border-2 mx-auto rounded-lg w-4/5"
+          style={{ direction: "rtl" }}
+        >
+          <input
+            placeholder="تگ 1"
+            type="text"
+            className="p-2 rounded-lg m-3 bg-gray-500 mb-2 md:w-1/3"
+            onChange={(e) => this.setState({ tag1: e.target.value })}
+            style={{ direction: "rtl" }}
+          />
+          <input
+            placeholder="تگ 2"
+            type="text"
+            className="p-2 rounded-lg m-3 bg-gray-500 mb-2 md:w-1/3"
+            onChange={(e) => this.setState({ tag2: e.target.value })}
+            style={{ direction: "rtl" }}
+          />
+          <input
+            placeholder="تگ 3"
+            type="text"
+            className="p-2 rounded-lg m-3 bg-gray-500 mb-2 md:w-1/3"
+            onChange={(e) => this.setState({ tag3: e.target.value })}
+            style={{ direction: "rtl" }}
+          />
+        </div>
+
+        {/* body & title */}
+        <h1 className="font-IranianSans text-2xl text-right my-5 dark:text-white">
+          عنوان و بدنه نوشته رو وارد کنید
+        </h1>
+        <div
+          className="flex flex-col bg-gray-100 border-gray-400 border-2 mx-auto rounded-lg w-4/5"
+          style={{ direction: "rtl" }}
+        >
+          <input
+            placeholder="عنوان"
+            type="text"
+            className="p-2 rounded-lg m-3 bg-gray-500 mb-2 md:w-2/3"
+            onChange={(e) => this.setState({ title: e.target.value })}
+            style={{ direction: "rtl" }}
+          />
+          <textarea
+            placeholder="بدنه"
+            type="text"
+            className="p-2 rounded-lg m-3 bg-gray-500 mb-2 md:w-2/3"
+            onChange={(e) => this.setState({ body: e.target.value })}
+            style={{ direction: "rtl" }}
+          />
+        </div>
+
+        <div className="flex flex-row justify-end rounded-lg w-4/5 mx-auto">
+          <button
+            onClick={(e) => this.onSave(e)}
+            className="p-5 rounded-lg my-3 bg-gray-600 text-white font-Vazir"
+          >
+            انتشار
+          </button>
+        </div>
       </Layout>
     );
   }
@@ -212,7 +276,6 @@ export const getServerSideProps = withSession(async function ({ req, res }) {
       },
     };
   }
-  console.log(user);
   return {
     props: { user: user },
   };

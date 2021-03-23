@@ -20,12 +20,10 @@ const A = (props) => {
   return (
     <>
       <div className="flex justify-between p-3 mb-2">
-        <div>
-          <a className="text-gray-300 text-sm">{" <<"}بیشتر</a>
-        </div>
+        <div></div>
         <div>
           <h1 className="font-Vazir text-2xl font-bold dark:text-gray-100">
-            محبوب ترین ها
+            از جدید ترین نقد ها
           </h1>
         </div>
       </div>
@@ -33,13 +31,13 @@ const A = (props) => {
         <div className="keen-slider__slide">
           <div className="flex flex-col" style={{ direction: "rtl" }}>
             <img src="/img/new-reveiws1.png" width="500" />
-            <span className="text-right">
+            <span className="text-right dark:text-gray-200">
               <span className="bg-bookgram-badge text-white px-2 rounded-md">
                 User
               </span>{" "}
-              <span className="text-5xl">.</span> 4min
+              <span className="text-5xl dark:text-gray-200">.</span> 4min
             </span>
-            <h1 className="font-IranianSans">
+            <h1 className="font-IranianSans dark:text-gray-200">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
             </h1>
             <p className="text-gray-400">
@@ -51,13 +49,13 @@ const A = (props) => {
         <div className="keen-slider__slide">
           <div className="flex flex-col" style={{ direction: "rtl" }}>
             <img src="/img/new-reveiws1.png" width="500" />
-            <span className="text-right">
+            <span className="text-right dark:text-gray-200">
               <span className="bg-bookgram-badge text-white px-2 rounded-md">
                 User
               </span>{" "}
-              <span className="text-5xl">.</span> 4min
+              <span className="text-5xl dark:text-gray-200">.</span> 4min
             </span>
-            <h1 className="font-IranianSans">
+            <h1 className="font-IranianSans dark:text-gray-200">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
             </h1>
             <p className="text-gray-400">

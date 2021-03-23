@@ -41,7 +41,7 @@ module.exports = {
       black: colors.black,
     },
     screens: {
-      xs: { max: "768px" },
+      xs: { max: "1024px" },
       ...defaultTheme.screens,
     },
   },

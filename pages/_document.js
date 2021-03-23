@@ -31,7 +31,7 @@ class MyDocument extends Document {
         <Head>
           <link rel="shortcut icon" href="/vercel.svg" />
         </Head>
-        <body className="bg-bookgram container mx-auto p-2 md:p-12 dark:bg-black">
+        <body className="bg-bookgram container mx-auto p-2 md:p-12 dark:bg-black overflow-x-hidden">
           <Main />
           <NextScript />
         </body>

@@ -26,16 +26,26 @@ function Home({ bestsellbook, newbook, hotbook }) {
           width: "100%",
           backgroundColor: "#c1c3c7",
           height: "2px",
-          margin: "5rem 0",
+          margin: "3rem 0",
         }}
       ></div>
-      <BookIntro />
+      <BookIntro data={hotbook} />
       <div
         style={{
           width: "100%",
           backgroundColor: "#c1c3c7",
           height: "2px",
-          margin: "5rem 0",
+          margin: "3rem 0",
+        }}
+      ></div>
+      <SliderNew data={newbook} />
+
+      <div
+        style={{
+          width: "100%",
+          backgroundColor: "#c1c3c7",
+          height: "2px",
+          margin: "3rem 0",
         }}
       ></div>
       <SliderSell data={bestsellbook} />
@@ -44,16 +54,7 @@ function Home({ bestsellbook, newbook, hotbook }) {
           width: "100%",
           backgroundColor: "#c1c3c7",
           height: "2px",
-          margin: "5rem 0",
-        }}
-      ></div>
-      <SliderNew data={newbook} />
-      <div
-        style={{
-          width: "100%",
-          backgroundColor: "#c1c3c7",
-          height: "2px",
-          margin: "5rem 0",
+          margin: "3rem 0",
         }}
       ></div>
       {/* slider blog*/}
@@ -64,7 +65,7 @@ function Home({ bestsellbook, newbook, hotbook }) {
           width: "100%",
           backgroundColor: "#c1c3c7",
           height: "2px",
-          margin: "5rem 0",
+          margin: "3rem 0",
         }}
       ></div>
       {/* slider auhtor */}
@@ -75,7 +76,7 @@ function Home({ bestsellbook, newbook, hotbook }) {
           width: "100%",
           backgroundColor: "#c1c3c7",
           height: "2px",
-          margin: "5rem 0",
+          margin: "3rem 0",
         }}
       ></div>
     </LayOut>

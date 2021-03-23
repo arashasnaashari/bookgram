@@ -16,7 +16,9 @@ const Compo = ({ data }) => {
                     <h1 className="text-lg break-all">{e.title}</h1>
                     <div className="flex flex-row justify-start">
                       <h1 className="text-xs text-gray-700 ml-2">
-                        {e.creator.username}
+                        <a href={`/user/@${e.creator.username}`}>
+                          {e.creator.username}
+                        </a>
                       </h1>
                       <h1 className="text-xs text-gray-700">
                         {e.creator.date}

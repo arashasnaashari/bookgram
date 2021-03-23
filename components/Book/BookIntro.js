@@ -1,31 +1,36 @@
-const Compo = () => {
+import Link from "next/link";
+const Compo = (data) => {
   return (
     <>
       <div
-        className="p-4 grid grid-cols-2 gap-4 md:h-72 bg-gradient-to-r from-bookgram-blueg text-black  dark:text-gray-200 rounded-3xl"
+        className="bg-gradient-to-r from-bookgram-blueg text-black dark:text-gray-200 rounded-3xl flex flex-row  justify-around h-72"
         style={{ direction: "rtl" }}
       >
-        <div className="p-4 flex content-evenly flex-wrap">
-          <h1 className="font-IranianSans text-xl md:text-4xl">
-            یوال هرری: انسان خردمند: تاریخ مختصر بشر
-          </h1>
-
-          <button className="px-3 py-2 mt-3 bg-bookgram-btn text-white rounded-sm">
-            مشاهده همه
-          </button>
+        <div className="w-full md:w-1/2 p-3 flex flex-col content-around justify-around">
+          <div>
+            <h1 className="font-IranianSans text-2xl md:text-5xl">
+              {data.data[Math.floor(Math.random() * 8)].author} :
+            </h1>
+            <h1 className="font-IranianSans text-2xl md:text-5xl">
+              {data.data[Math.floor(Math.random() * 8)].title}
+            </h1>
+          </div>
+          <div>
+            <button className="w-full md:w-1/2 px-2 py-3 bg-bookgram-btn text-white rounded-lg font-IranianSans">
+              <Link
+                href={`/book/${data.data[Math.floor(Math.random() * 8)]._id}`}
+              >
+                مشاهده
+              </Link>
+            </button>
+          </div>
         </div>
-        <div className="flex justify-around items-center">
+
+        <div className=" flex justify-center p-3">
           <img
-            src="/img/add-to-library.png"
+            src={data.data[Math.floor(Math.random() * 8)].image}
             alt="s"
-            className="h-1/2 md:h-auto"
-            width="100"
-          />
-          <img
-            src="/img/add-to-library1.png"
-            alt="s"
-            className="h-1/2 md:h-auto"
-            width="100"
+            className="h-1/2 md:h-4/5 shadow-2xl"
           />
         </div>
       </div>

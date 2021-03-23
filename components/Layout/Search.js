@@ -4,27 +4,27 @@ import { useRouter } from "next/router";
 const Compo = () => {
   const [text, setText] = useState("");
   const router = useRouter();
+  let path;
+  if (
+    router.asPath.split("/")[1] == "ketab" ||
+    router.asPath.split("/")[1] == "book" ||
+    router.asPath.split("/")[1] == "about" ||
+    router.asPath.split("/")[1] == "category" ||
+    router.asPath.split("/")[1] == "" ||
+    router.asPath.split("/")[1] == "searchbook"
+  ) {
+    path = "searchbook";
+  } else if (
+    router.asPath.split("/")[1] == "tag" ||
+    router.asPath.split("/")[1] == "blog" ||
+    router.asPath.split("/")[1] == "user" ||
+    router.asPath.split("/")[1] == "searchblog"
+  ) {
+    path = "searchblog";
+  }
   const handleSearch = async (e) => {
     e.preventDefault();
-    let path;
     if (text) {
-      if (
-        router.asPath.split("/")[1] == "ketab" ||
-        router.asPath.split("/")[1] == "book" ||
-        router.asPath.split("/")[1] == "about" ||
-        router.asPath.split("/")[1] == "category" ||
-        router.asPath.split("/")[1] == "" ||
-        router.asPath.split("/")[1] == "searchbook"
-      ) {
-        path = "searchbook";
-      } else if (
-        router.asPath.split("/")[1] == "tag" ||
-        router.asPath.split("/")[1] == "blog" ||
-        router.asPath.split("/")[1] == "user" ||
-        router.asPath.split("/")[1] == "searchblog"
-      ) {
-        path = "searchblog";
-      }
       router.push(`/${path}/${text}/0/7`);
     }
   };
@@ -51,13 +51,24 @@ const Compo = () => {
           </button>
         </span>
         <form onSubmit={handleSearch}>
-          <input
-            type="search"
-            name="q"
-            onChange={(t) => setText(t.target.value)}
-            className="bg-bookgram-search py-2 text-sm rounded-md pl-10 focus:outline-none w-full h-12 placeholder-bookgram-menu font-IranianSans pr-3"
-            placeholder="جستوجو بر اساس نام کتاب ..."
-          />
+          {path == "searchblog" && (
+            <input
+              type="search"
+              name="q"
+              onChange={(t) => setText(t.target.value)}
+              className="bg-bookgram-search py-2 text-sm rounded-md pl-10 focus:outline-none w-full h-12 placeholder-bookgram-menu font-IranianSans pr-3"
+              placeholder="جستوجو بر اساس  مقاله ..."
+            />
+          )}
+          {path == "searchbook" && (
+            <input
+              type="search"
+              name="q"
+              onChange={(t) => setText(t.target.value)}
+              className="bg-bookgram-search py-2 text-sm rounded-md pl-10 focus:outline-none w-full h-12 placeholder-bookgram-menu font-IranianSans pr-3"
+              placeholder="جستوجو بر اساس نام کتاب ..."
+            />
+          )}
         </form>
       </div>
     </>

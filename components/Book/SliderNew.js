@@ -32,7 +32,7 @@ const A = ({ data }) => {
         </div>
         <div>
           <h1 className="font-Vazir text-2xl font-bold dark:text-gray-100">
-            محبوب ترین ها
+            تازه ها
           </h1>
         </div>
       </div>

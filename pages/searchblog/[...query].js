@@ -14,7 +14,9 @@ function Home({ posts, name }) {
 }
 export async function getServerSideProps({ params: { query } }) {
   await dbConnect();
-  const books = await Post.find({ title: new RegExp(query[0]) })
+  const books = await Post.find({
+    title: new RegExp(query[0]),
+  })
     .skip(+query[1])
     .limit(+query[2])
     .sort({ like: 1 })

@@ -25,7 +25,22 @@ const Compo = ({ data }) => {
   return (
     <Layout>
       <div style={{ direction: "rtl" }}>
-        <pre>{console.log(JSON.parse(data))}</pre>
+        <pre>
+          {console.log(
+            JSON.parse(
+              data
+                .split("")
+                .map((e) => {
+                  if (e == "'") {
+                    return '"';
+                  } else {
+                    return e;
+                  }
+                })
+                .join("")
+            )
+          )}
+        </pre>
       </div>
     </Layout>
   );
@@ -48,7 +63,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { username } }) {
   await dbConnect();
   const newUsername = username.substring(1);
-  console.log(newUsername);
   const users = await User.find({ username: newUsername })
     .select({
       username: 1,
