@@ -17,7 +17,7 @@ const Compo = () => {
   let dash = false;
   switch (router.asPath.split("/")[1]) {
     case "about":
-      // about = true;
+      about = true;
       break;
     case "category":
       categour = true;
@@ -39,39 +39,38 @@ const Compo = () => {
       bg-bookgram text-gray-500 md:bg-white dark:bg-gray-800 md:text-bookgram-menu dark:text-gray-500
        md:dark:bg-gray-900 w-full left-0 rounded-md items-start font-Vazir md:w-3/4 xl:w-1/2 md:static md:pb-7 md:text-xl border-t-2 border-gray-900 md:border-0 text-xs text-center md:mx-auto font-semibold sm:h-20"
       >
-        <a href="/">
-          <a
-            className={
-              home
-                ? `text-black md:text-gray-800 dark:text-white`
-                : `md:hover:text-gray-800 md:dark:hover:text-white`
-            }
-          >
-            <div className="w-8 md:hidden sm:w-11">
-              <svg
-                className={
-                  home
-                    ? `stroke-current text-black dark:text-white`
-                    : `stroke-current text-gray-500 `
-                }
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                />
-              </svg>
-            </div>
-            خانه
-            {home && (
-              <div className="hidden md:block text-bookgram-badge bg-bookgram-badge rounded-full w-3 h-3 mx-auto mt-2"></div>
-            )}
-          </a>
+        <a
+          href="/"
+          className={
+            home
+              ? `text-black md:text-gray-800 dark:text-white`
+              : `md:hover:text-gray-800 md:dark:hover:text-white`
+          }
+        >
+          <div className="w-8 md:hidden sm:w-11">
+            <svg
+              className={
+                home
+                  ? `stroke-current text-black dark:text-white`
+                  : `stroke-current text-gray-500 `
+              }
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              />
+            </svg>
+          </div>
+          خانه
+          {home && (
+            <div className="hidden md:block text-bookgram-badge bg-bookgram-badge rounded-full w-3 h-3 mx-auto mt-2"></div>
+          )}
         </a>
         <Link href="/about">
           <a
