@@ -77,12 +77,11 @@ const Compo = () => {
                 <div
                   className="py-1"
                   onClick={() => {
-                    fetch("https://bookgram.vercel.app/api/logout");
+                    fetch("http://localhost:3000/api/logout");
                     router.reload();
                   }}
                 >
                   <a
-                    href="/"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                     role="menuitem"
                   >

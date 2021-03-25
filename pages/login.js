@@ -27,7 +27,7 @@ const Com = ({ shouldshow }) => {
       };
       try {
         setLoading(true);
-        const res = await fetch("https://bookgram.vercel.app/api/signin", {
+        const res = await fetch("http://localhost:3000/api/signin", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
@@ -49,7 +49,7 @@ const Com = ({ shouldshow }) => {
     if (isLogin == true) {
       try {
         setLoading(true);
-        const res = await fetch("https://bookgram.vercel.app/api/login", {
+        const res = await fetch("http://localhost:3000/api/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ password, phone }),
@@ -57,7 +57,7 @@ const Com = ({ shouldshow }) => {
         const data = await res.json();
         if (data.sign == true) {
           setLoading(false);
-          router.reload();
+          router.push("/dashboard");
           // context.login(data.token, data.userId, data.username, "profile");
         } else {
           setLoading(false);

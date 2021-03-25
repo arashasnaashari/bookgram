@@ -83,18 +83,15 @@ function Home({ bestsellbook, newbook, hotbook }) {
   );
 }
 export async function getServerSideProps(context) {
-  const reshot = await fetch("https://bookgram.vercel.app/api/hotbook/0/8", {
+  const reshot = await fetch("http://localhost:3000/api/hotbook/0/8", {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
-  const ressell = await fetch(
-    "https://bookgram.vercel.app/api/bestsellbook/0/8",
-    {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    }
-  );
-  const resnew = await fetch("https://bookgram.vercel.app/api/newbook/0/8", {
+  const ressell = await fetch("http://localhost:3000/api/bestsellbook/0/8", {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  });
+  const resnew = await fetch("http://localhost:3000/api/newbook/0/8", {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });

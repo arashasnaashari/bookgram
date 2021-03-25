@@ -17,7 +17,7 @@ const Compo = () => {
   let dash = false;
   switch (router.asPath.split("/")[1]) {
     case "about":
-      about = true;
+      // about = true;
       break;
     case "category":
       categour = true;
@@ -35,11 +35,11 @@ const Compo = () => {
   return (
     <>
       <div
-        className="sm:text-lg z-40 flex flex-row flex-nowrap fixed justify-around md:justify-between bottom-0 h-16
+        className="sm:text-lg z-40 flex flex-row flex-nowrap fixed justify-around md:justify-between bottom-0 h-14
       bg-bookgram text-gray-500 md:bg-white dark:bg-gray-800 md:text-bookgram-menu dark:text-gray-500
        md:dark:bg-gray-900 w-full left-0 rounded-md items-start font-Vazir md:w-3/4 xl:w-1/2 md:static md:pb-7 md:text-xl border-t-2 border-gray-900 md:border-0 text-xs text-center md:mx-auto font-semibold sm:h-20"
       >
-        <Link href="/">
+        <a href="/">
           <a
             className={
               home
@@ -51,7 +51,7 @@ const Compo = () => {
               <svg
                 className={
                   home
-                    ? `stroke-current text-black `
+                    ? `stroke-current text-black dark:text-white`
                     : `stroke-current text-gray-500 `
                 }
                 xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ const Compo = () => {
               <div className="hidden md:block text-bookgram-badge bg-bookgram-badge rounded-full w-3 h-3 mx-auto mt-2"></div>
             )}
           </a>
-        </Link>
+        </a>
         <Link href="/about">
           <a
             className={

@@ -9,7 +9,7 @@ const Compo = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="bg-bookgram bg-opacity-75 shadow-lg rounded-xl lg:shadow-none lg:bg-opacity-0 p-4 flex flex-col flex-wrap col-span-2 lg:col-span-1">
+        <div className="bg-bookgram  dark:bg-gray-800 dark:bg-opacity-75 bg-opacity-75 shadow-lg rounded-xl lg:shadow-none lg:bg-opacity-0 p-4 flex flex-col flex-wrap col-span-2 lg:col-span-1">
           <h1 className=" font-Vazir text-3xl sm:text-2xl lg:text-4xl text-bookgram-head dark:text-gray-200 mb-4 lg:mb-auto">
             کتابخانه خودت را بساز
           </h1>
@@ -21,7 +21,6 @@ const Compo = () => {
             مشاهده همه
           </button>
         </div>
-
         <div
           className="md:flex content-center col-span-1"
           style={{

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click</button>
+
+
+    <script>
+        document.querySelector('button').addEventListener("click",async (e) => {
+            e.preventDefault()
+            fetch("https://bookgram.vercel.app/api/newbook/0/8", {
+            method: "GET",
+            headers: { "Content-Type": "application/json"},
+            
+            }).then(res => res.json()).then(data => console.log(data)).catch(err => console.log(err))
+           
+        })
+        //2161   6142     27491228
+    </script>
+</body>
+</html>
