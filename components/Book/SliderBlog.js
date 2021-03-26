@@ -1,10 +1,18 @@
 import { useKeenSlider } from "keen-slider/react";
-
-const A = (props) => {
+import Link from "next/link";
+import TimeAgo from "timeago-react";
+import * as timeago from "timeago.js";
+import fa from "timeago.js/lib/lang/fa";
+const A = ({ data }) => {
+  timeago.register("fa", fa);
   const [sliderRef] = useKeenSlider({
     breakpoints: {
+      "(min-width: 300px)": {
+        slidesPerView: 1.4,
+        mode: "free-snap",
+      },
       "(min-width: 768px)": {
-        slidesPerView: 2,
+        slidesPerView: 2.2,
         mode: "free-snap",
       },
       "(min-width: 1200px)": {
@@ -18,54 +26,48 @@ const A = (props) => {
   });
 
   return (
-    <>
+    <div className=" dark:text-white">
       <div className="flex justify-between p-3 mb-2">
         <div></div>
         <div>
           <h1 className="font-Vazir text-2xl font-bold dark:text-gray-100">
-            از جدید ترین نقد ها
+            از آخرین نقد ها
           </h1>
         </div>
       </div>
-      <div ref={sliderRef} className="keen-slider">
-        <div className="keen-slider__slide">
-          <div className="flex flex-col" style={{ direction: "rtl" }}>
-            <img src="/img/new-reveiws1.png" width="500" />
-            <span className="text-right dark:text-gray-200">
-              <span className="bg-bookgram-badge text-white px-2 rounded-md">
-                User
-              </span>{" "}
-              <span className="text-5xl dark:text-gray-200">.</span> 4min
-            </span>
-            <h1 className="font-IranianSans dark:text-gray-200">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-            </h1>
-            <p className="text-gray-400">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
-            </p>
-          </div>
-        </div>
-        <div className="keen-slider__slide">
-          <div className="flex flex-col" style={{ direction: "rtl" }}>
-            <img src="/img/new-reveiws1.png" width="500" />
-            <span className="text-right dark:text-gray-200">
-              <span className="bg-bookgram-badge text-white px-2 rounded-md">
-                User
-              </span>{" "}
-              <span className="text-5xl dark:text-gray-200">.</span> 4min
-            </span>
-            <h1 className="font-IranianSans dark:text-gray-200">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟
-            </h1>
-            <p className="text-gray-400">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه
-            </p>
-          </div>
-        </div>
+      <div ref={sliderRef} className="keen-slider mb-10">
+        {data &&
+          data.map((e) => {
+            return (
+              <div className="keen-slider__slide">
+                <div className="flex flex-col" style={{ direction: "rtl" }}>
+                  <a href={`/blog/${e._id}`}>
+                    <div
+                      className="w-full h-56 md:h-56 mt-2 bg-cover bg-no-repeat bg-center mx-auto"
+                      style={{ backgroundImage: `url(${e.image})` }}
+                    ></div>{" "}
+                  </a>
+
+                  <span className="text-right">
+                    <TimeAgo datetime={e.date} locale="fa" />{" "}
+                    <span className="text-5xl">.</span>{" "}
+                    <span className="bg-bookgram-badge text-white px-2 rounded-md">
+                      <a href={`/user/@${e.creator.username}`}>
+                        {e.creator.username}
+                      </a>
+                    </span>
+                  </span>
+                  <Link href={`/blog/${e._id}`}>
+                    <h1 className="font-IranianSans text-lg font-bold">
+                      {e.title}
+                    </h1>
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
       </div>
-    </>
+    </div>
   );
 };
 export default A;

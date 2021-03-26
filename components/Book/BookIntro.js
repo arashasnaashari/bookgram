@@ -1,5 +1,7 @@
 import Link from "next/link";
 const Compo = (data) => {
+  const random = data.data[Math.floor(Math.random() * 8)];
+
   return (
     <>
       <div
@@ -9,19 +11,15 @@ const Compo = (data) => {
         <div className="w-full md:w-1/2 p-3 flex flex-col content-around justify-around">
           <div>
             <h1 className="font-IranianSans text-2xl md:text-5xl">
-              {data.data[Math.floor(Math.random() * 8)].author} :
+              {random.author} :
             </h1>
             <h1 className="font-IranianSans text-2xl md:text-5xl">
-              {data.data[Math.floor(Math.random() * 8)].title}
+              {random.title}
             </h1>
           </div>
           <div>
             <button className="w-full md:w-1/2 px-2 py-3 bg-bookgram-btn text-white rounded-lg font-IranianSans">
-              <Link
-                href={`/book/${data.data[Math.floor(Math.random() * 8)]._id}`}
-              >
-                مشاهده
-              </Link>
+              <Link href={`/book/${random._id}`}>مشاهده</Link>
             </button>
           </div>
         </div>

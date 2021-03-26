@@ -49,6 +49,15 @@ const Compo = (props) => {
               }}
             ></div>
           </div>
+          <div className="keen-slider__slide number-slide1">
+            <div
+              className="bg-contain w-full h-full"
+              style={{
+                backgroundImage: "url(/img/naghd.jpg)",
+              }}
+            ></div>
+          </div>
+
           <div className="keen-slider__slide number-slide2">
             <div
               className="bg-contain w-full h-full "
@@ -59,13 +68,14 @@ const Compo = (props) => {
             ></div>
           </div>
         </div>
+
         <div
           className="my-4 lg:my-0 lg:mr-4 lg:mb-3 lg:w-1/3 bg-gray-900 md:text-lg p-4 text-white overflow-hidden"
           style={{ direction: "rtl" }}
         >
           <div>
             <h1 className="text-sm">
-              چی تو ذهنت می‌گذره؟ ویرگول همون جاییه که می‌تونی بنویسیش
+              چی تو ذهنت می‌گذره؟ بوک گرام همون جاییه که می‌تونی بنویسیش
             </h1>
             <button className="bg-white text-gray-800 px-2 py-1 mt-3">
               <a href="/blog/create">بریم بسازیم</a>

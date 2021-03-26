@@ -8,7 +8,7 @@ import BookIntro from "../components/Book/BookIntro";
 import LayOut from "../components/Layout/Layout";
 
 import { useState } from "react";
-function Home({ bestsellbook, newbook, hotbook }) {
+function Home({ bestsellbook, newbook, hotbook, hotbookblog }) {
   return (
     <LayOut>
       <Landing />
@@ -59,7 +59,7 @@ function Home({ bestsellbook, newbook, hotbook }) {
       ></div>
       {/* slider blog*/}
 
-      <SliderBlog />
+      <SliderBlog data={hotbookblog} />
       <div
         style={{
           width: "100%",
@@ -98,12 +98,20 @@ export async function getServerSideProps(context) {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
+  const reshotblog = await fetch(
+    "https://bookgram.vercel.app/api/bestpost/0/7",
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
+  const hotbookblog = await reshotblog.json();
   const hotbook = await reshot.json();
   const bestsellbook = await ressell.json();
   const newbook = await resnew.json();
 
   return {
-    props: { hotbook, newbook, bestsellbook },
+    props: { hotbook, newbook, bestsellbook, hotbookblog },
   };
 }
 export default Home;

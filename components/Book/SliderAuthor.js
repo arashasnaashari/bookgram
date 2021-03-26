@@ -30,7 +30,7 @@ const A = (props) => {
       <div className="md:grid md:grid-cols-10 flex flex-col-reverse font-Vazir">
         <div className="col-span-5 md:col-span-2">
           <div className="md:w-full text-center md:h-full flex md:flex-col flex-row md:justify-end justify-around mt-2 md:mt-auto">
-            <h1 className="text-gray-400">{`<<`} بیشتر </h1>
+            <h1 className="text-gray-400 text-base">{`<<`} بیشتر </h1>
             <h1 className="text-xl text-gray-700 md:hidden">منظر حسینی</h1>
           </div>
         </div>
