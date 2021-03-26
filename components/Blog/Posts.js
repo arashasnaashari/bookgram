@@ -41,7 +41,10 @@ const Compo = ({ data, neww }) => {
           return (
             <>
               <a href={`/blog/${e._id}`}>
-                <div className="flex flex-col" style={{ direction: "rtl" }}>
+                <div
+                  className="flex flex-col my-7"
+                  style={{ direction: "rtl" }}
+                >
                   <div className="flex flex-row justify-around w-full">
                     <div
                       className=" w-1/3 h-32 rounded-lg"
