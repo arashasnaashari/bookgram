@@ -26,7 +26,7 @@ const Compo = (data) => {
 
         <div className=" flex justify-center p-3">
           <img
-            src={data.data[Math.floor(Math.random() * 8)].image}
+            src={random.image}
             alt="s"
             className="h-1/2 md:h-4/5 shadow-2xl"
           />
