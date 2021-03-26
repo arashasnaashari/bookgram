@@ -13,9 +13,9 @@ const Compo = ({ data }) => {
               >
                 <div className="w-2/3 flex flex-wrap content-center">
                   <div className="flex flex-col">
-                    <h1 className="text-lg break-all">{e.title}</h1>
+                    <h1 className=" text-base truncate w-11/12">{e.title}</h1>
                     <div className="flex flex-row justify-start">
-                      <h1 className="text-xs text-gray-700 ml-2">
+                      <h1 className="text-xs text-gray-600 dark:text-gray-400 font-bold ml-2">
                         <a href={`/user/@${e.creator.username}`}>
                           {e.creator.username}
                         </a>

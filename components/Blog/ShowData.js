@@ -1,5 +1,5 @@
 import Output from "editorjs-react-renderer";
-
+import { useEffect } from "react";
 const Post = ({ data }) => {
   const style = {
     header: {
@@ -99,8 +99,22 @@ const Post = ({ data }) => {
       },
     },
   };
+  useEffect(() => {
+    const allPath = document.querySelector("section");
+    const arrayed = Object.entries(allPath.children);
+    let result = [];
+    arrayed.map((e) => {
+      result.push(e[1]);
+    });
+
+    result.map((ee) => {
+      if (ee.children[0] !== undefined && ee.children[0].nodeName == "A") {
+        ee.style.color = "red";
+      }
+    });
+  }, []);
   return (
-    <section style={{ direction: "rtl" }} className="w-1/2 mx-auto">
+    <section style={{ direction: "rtl" }} className="md:w-1/2 mx-auto w-full">
       <Output
         style={style}
         data={JSON.parse(

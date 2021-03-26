@@ -151,7 +151,7 @@ class Editor extends React.Component {
       return e.type == "image";
     }); // data.file.url
 
-    if (title && body) {
+    if (this.state.title && this.state.body) {
       const data1 = JSON.stringify(data)
         .split("")
         .map((e) => {
@@ -183,6 +183,8 @@ class Editor extends React.Component {
           }
         })
         .catch((err) => console.log(err));
+    } else {
+      alert("body  title   image");
     }
   }
   render() {

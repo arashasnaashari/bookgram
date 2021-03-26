@@ -35,7 +35,7 @@ const A = ({ data }) => {
           </h1>
         </div>
       </div>
-      <div ref={sliderRef} className="keen-slider">
+      <div ref={sliderRef} className="keen-slider mb-10">
         {data &&
           data.map((e) => {
             return (
@@ -43,7 +43,7 @@ const A = ({ data }) => {
                 <div className="flex flex-col" style={{ direction: "rtl" }}>
                   <a href={`/blog/${e._id}`}>
                     <div
-                      className="w-full h-60 md:h-56 mt-2 bg-cover bg-no-repeat bg-center mx-auto"
+                      className="w-full h-56 md:h-56 mt-2 bg-cover bg-no-repeat bg-center mx-auto"
                       style={{ backgroundImage: `url(${e.image})` }}
                     ></div>{" "}
                   </a>
@@ -58,7 +58,9 @@ const A = ({ data }) => {
                     </span>
                   </span>
                   <Link href={`/blog/${e._id}`}>
-                    <h1 className="font-IranianSans">{e.title}</h1>
+                    <h1 className="font-IranianSans text-lg font-bold">
+                      {e.title}
+                    </h1>
                   </Link>
                 </div>
               </div>

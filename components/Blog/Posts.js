@@ -41,20 +41,35 @@ const Compo = ({ data, neww }) => {
           return (
             <>
               <a href={`/blog/${e._id}`}>
-                <div
-                  className="mb-4 flex flex-row-reverse flex-nowrap justify-between h-44 lg:h-48 dark:text-gray-200"
-                  style={{ direction: "rtl" }}
-                >
-                  <div className="w-2/3 flex flex-wrap content-evenly">
-                    <h1 className="text-xl pl-20">{e.title}</h1>
-                    <h1 className="text-xs">{e.body}</h1>
-                  </div>
-                  <div className="w-1/3">
+                <div className="flex flex-col" style={{ direction: "rtl" }}>
+                  <div className="flex flex-row justify-around w-full">
                     <div
-                      className="w-2/3 h-4/5 bg-contain bg-no-repeat bg-center mx-auto"
-                      style={{ backgroundImage: `url(${e.image})` }}
+                      className=" w-1/3 h-32 rounded-lg"
+                      style={{
+                        backgroundImage: `url(${e.image})`,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                      }}
                     ></div>
-                    <div className="flex flex-row mr-7">
+                    <div className=" w-2/3 mr-3">
+                      <h1 className="text-lg mb-3">{e.title}</h1>
+                      <p
+                        className="text-sm text-gray-600 dark:text-gray-400"
+                        style={{
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          display: "-webkit-box",
+                          WebkitLineClamp: 3,
+                          WebkitBoxOrient: "vertical",
+                        }}
+                      >
+                        {e.body}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="w-full mt-3">
+                    <div className="flex flex-row">
                       <div
                         className=" bg-cover rounded-full w-8 h-8 "
                         style={{
@@ -62,12 +77,12 @@ const Compo = ({ data, neww }) => {
                         }}
                       ></div>
                       <div>
-                        <h1 className="text-xs pr-2 text-gray-700">
+                        <h1 className="text-xs pr-2 font-bold">
                           <a href={`/user/@${e.creator.username}`}>
                             {e.creator.username}
                           </a>
                         </h1>
-                        <h1 className="text-xs pr-2 text-gray-700">
+                        <h1 className="text-xs pr-2 text-gray-600 dark:text-gray-400">
                           <TimeAgo datetime={e.date} locale="fa" />
                         </h1>
                       </div>
@@ -76,12 +91,8 @@ const Compo = ({ data, neww }) => {
                 </div>
               </a>
               <div
-                style={{
-                  width: "90%",
-                  backgroundColor: "#c1c3c7",
-                  height: "0.2px",
-                  margin: "auto 0",
-                }}
+                className="w-full dark:bg-gray-50 dark:bg-opacity-10 bg-gray-200 my-7"
+                style={{ height: "1px" }}
               ></div>
             </>
           );
