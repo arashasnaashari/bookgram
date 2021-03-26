@@ -77,7 +77,7 @@ const Compo = () => {
                 <div
                   className="py-1"
                   onClick={() => {
-                    fetch("http://localhost:3000/api/logout")
+                    fetch("https://bookgram.vercel.app/api/logout")
                       .then((res) => res.json())
                       .then((data) => console.log(data))
                       .catch((err) => alert(err));
