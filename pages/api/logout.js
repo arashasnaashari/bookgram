@@ -1,10 +1,6 @@
 import withSession from "../../utils/session";
 
 export default withSession(async (req, res) => {
-  // await req.session.destroy();
-  req.session.set("user", {
-    isLoggedIn: false,
-  });
-  await req.session.save();
+  await req.session.destroy();
   res.json({ isLoggedIn: false });
 });
