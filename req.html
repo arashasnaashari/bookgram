@@ -12,7 +12,7 @@
     <script>
       document.querySelector("button").addEventListener("click", async (e) => {
         e.preventDefault();
-        fetch("https://bookgram.vercel.app/api/newbook/0/8", {
+        fetch("http://localhost:3000/api/newbook/0/8", {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         })

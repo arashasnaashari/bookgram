@@ -162,7 +162,7 @@ class Editor extends React.Component {
           }
         })
         .join("");
-      fetch("https://bookgram.vercel.app/api/createblog", {
+      fetch("http://localhost:3000/api/createblog", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
