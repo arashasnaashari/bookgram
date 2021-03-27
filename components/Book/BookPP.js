@@ -34,7 +34,7 @@ const Compo = ({ data, userId }) => {
         <div className="text-center">
           <img src={data.image} className="w-48 mx-auto"></img>
           {array}
-          <h1>از {data.nstar}نظر</h1>
+          <h1 className="text-base">از {data.nstar}نظر</h1>
         </div>{" "}
         <div className="col-span-2 flex flex-col p-4">
           <div className="mb-2">
