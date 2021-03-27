@@ -33,7 +33,7 @@ const Compo = ({ userId, bookId, img, name }) => {
         ],
         false
       );
-      const res = await fetch("https://localhost:3000/api/createview", {
+      const res = await fetch("https://bookgram.vercel.app/api/createview", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text, userId, bookId }),
@@ -142,7 +142,7 @@ const Compo = ({ userId, bookId, img, name }) => {
                                         false
                                       );
                                       const res = await fetch(
-                                        "https://localhost:3000/api/replyview",
+                                        "https://bookgram.vercel.app/api/replyview",
                                         {
                                           method: "POST",
                                           headers: {
@@ -201,7 +201,7 @@ const Compo = ({ userId, bookId, img, name }) => {
                                 false
                               );
                               const res = await fetch(
-                                "https://localhost:3000/api/deleteview",
+                                "https://bookgram.vercel.app/api/deleteview",
                                 {
                                   method: "POST",
                                   headers: {

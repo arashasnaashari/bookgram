@@ -69,7 +69,7 @@ const Compo = ({ data, userId }) => {
                 className="p-4 bg-bookgram-btn rounded-sm text-sm"
                 onClick={async () => {
                   const res = await fetch(
-                    "https://localhost:3000/api/addtolib",
+                    "https://bookgram.vercel.app/api/addtolib",
                     {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },

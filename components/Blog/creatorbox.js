@@ -2,7 +2,7 @@ const Compo = ({ data, userId }) => {
   const handleFollow = async (f) => {
     if (userId !== data._id) {
       f.preventDefault();
-      const res = await fetch("https://localhost:3000/api/follow", {
+      const res = await fetch("https://bookgram.vercel.app/api/follow", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ follower: userId, followed: data._id }),

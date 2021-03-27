@@ -27,7 +27,7 @@ const Com = ({ shouldshow }) => {
       };
       try {
         setLoading(true);
-        const res = await fetch("https://localhost:3000/api/signin", {
+        const res = await fetch("https://bookgram.vercel.app/api/signin", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
@@ -49,7 +49,7 @@ const Com = ({ shouldshow }) => {
     if (isLogin == true) {
       try {
         setLoading(true);
-        const res = await fetch("https://localhost:3000/api/login", {
+        const res = await fetch("https://bookgram.vercel.app/api/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ password, phone }),
