@@ -66,7 +66,7 @@ const Compo = ({ data, userId }) => {
             </div> */}
             <div>
               <button
-                className="p-4 bg-bookgram-btn rounded-sm text-sm"
+                className="p-4 bg-bookgram-btn rounded-sm text-xs md:text-base"
                 onClick={async () => {
                   const res = await fetch(
                     "https://bookgram.vercel.app/api/addtolib",
