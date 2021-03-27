@@ -3,6 +3,7 @@ import Form from "./Form";
 import useUser from "../../utils/useUser";
 import { useRouter } from "next/router";
 import Popup from "reactjs-popup";
+import { route } from "next/dist/next-server/server/router";
 const Compo = () => {
   const [menu, Open] = useState(false);
   const [username, setUser] = useState("");
@@ -77,9 +78,9 @@ const Compo = () => {
                 <div
                   className="py-1"
                   onClick={() => {
-                    fetch("https://bookgram.vercel.app/api/logout")
+                    fetch("https://localhost:3000/api/logout")
                       .then((res) => res.json())
-                      .then((data) => console.log(data))
+                      .then((data) => router.reload())
                       .catch((err) => alert(err));
                   }}
                 >

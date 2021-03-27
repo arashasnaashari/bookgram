@@ -66,10 +66,10 @@ const Compo = ({ data, userId }) => {
             </div> */}
             <div>
               <button
-                className="p-4 bg-bookgram-btn rounded-sm"
+                className="p-4 bg-bookgram-btn rounded-sm text-sm"
                 onClick={async () => {
                   const res = await fetch(
-                    "https://bookgram.vercel.app/api/addtolib",
+                    "https://localhost:3000/api/addtolib",
                     {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
@@ -80,6 +80,7 @@ const Compo = ({ data, userId }) => {
                     }
                   );
                   const data1 = await res.json();
+                  alert("okk");
                 }}
               >
                 اضافه به کتابخانه

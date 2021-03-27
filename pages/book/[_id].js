@@ -32,7 +32,7 @@ const Compo = ({ data }) => {
     e.preventDefault();
     if (typeof window !== "undefined") {
       if (localStorage.getItem(`star-${data._id}`) !== "true") {
-        const res = await fetch("https://bookgram.vercel.app/api/starbook", {
+        const res = await fetch("https://localhost:3000/api/starbook", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ bookId: data._id, star: rate }),
@@ -64,7 +64,7 @@ const Compo = ({ data }) => {
             starDimension="20px"
             starRatedColor="gold"
             changeRating={changeRating}
-            numberOfStars={6}
+            numberOfStars={5}
             name="rating"
             starHoverColor="yellow"
           />

@@ -5,8 +5,11 @@ import Form from "../../components/Layout/Form";
 import TimeAgo from "timeago-react";
 import * as timeago from "timeago.js";
 import fa from "timeago.js/lib/lang/fa";
+import { useRouter } from "next/router";
+
 const fetcher = (url) => fetch(url).then((r) => r.json());
 const Compo = ({ userId, bookId, img, name }) => {
+  const router = useRouter();
   timeago.register("fa", fa);
   const [text, setText] = useState("");
   const [text1, setText1] = useState("");
@@ -33,7 +36,7 @@ const Compo = ({ userId, bookId, img, name }) => {
         ],
         false
       );
-      const res = await fetch("https://bookgram.vercel.app/api/createcomment", {
+      const res = await fetch("https://localhost:3000/api/createcomment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text, userId, bookId }),
@@ -82,7 +85,7 @@ const Compo = ({ userId, bookId, img, name }) => {
                         <img src={e.creator.profileURL} width="20"></img>
                       </div>
                       <div>
-                        <h1>
+                        <h1 className="text-base">
                           <a href={`/user/${e.creator._id}`}>
                             {e.creator.username}
                           </a>
@@ -95,7 +98,10 @@ const Compo = ({ userId, bookId, img, name }) => {
                     </div>
                     <div>
                       {userId && (
-                        <Popup trigger={<h1>پاسخ {` >>`}</h1>} modal>
+                        <Popup
+                          trigger={<h1 className="text-base">پاسخ {` >>`}</h1>}
+                          modal
+                        >
                           <div className="border-2 border-gray-900 rounded-lg">
                             <div
                               className="flex flex-row"
@@ -143,7 +149,7 @@ const Compo = ({ userId, bookId, img, name }) => {
                                         false
                                       );
                                       const res = await fetch(
-                                        "https://bookgram.vercel.app/api/replytocomment",
+                                        "https://localhost:3000/api/replytocomment",
                                         {
                                           method: "POST",
                                           headers: {
@@ -162,7 +168,7 @@ const Compo = ({ userId, bookId, img, name }) => {
                                       mutate(`/api/comments/${bookId}/0/7`);
                                     }
 
-                                    console.log("u had did");
+                                    router.reload();
                                   }}
                                 >
                                   <textarea
@@ -172,7 +178,7 @@ const Compo = ({ userId, bookId, img, name }) => {
                                     onChange={(event) =>
                                       setText1(event.target.value)
                                     }
-                                    placeholder="Describe yourself here..."
+                                    placeholder="بازخورد خود را بنویسید"
                                   ></textarea>
                                   <button
                                     type="submit"
@@ -202,7 +208,7 @@ const Compo = ({ userId, bookId, img, name }) => {
                                 false
                               );
                               const res = await fetch(
-                                "https://bookgram.vercel.app/api/deletecommnt",
+                                "https://localhost:3000/api/deletecommnt",
                                 {
                                   method: "POST",
                                   headers: {
@@ -240,7 +246,7 @@ const Compo = ({ userId, bookId, img, name }) => {
                                   <img src={r.img} width="20"></img>
                                 </div>
                                 <div>
-                                  <h1>
+                                  <h1 className="text-base">
                                     <a href={`/user/${e.creator._id}`}>
                                       {r.name}
                                     </a>
