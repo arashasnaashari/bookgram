@@ -35,7 +35,9 @@ export const getServerSideProps = withSession(async function ({ req, res }) {
   await dbConnect();
   const user = req.session.get("user");
   if (!user) {
-    res.redirect("https://bookgram.vercel.app/login");
+    res.setHeader("location", "/login");
+    res.statusCode = 302;
+    res.end();
   }
   const usero = await Reader.find({ userId: user.userId })
     .sort({ date: -1 })
