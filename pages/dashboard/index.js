@@ -37,8 +37,9 @@ export const getServerSideProps = withSession(async function ({ req, res }) {
   if (!user) {
     return {
       redirect: {
+        source: "/",
         destination: "/login",
-        permanent: false,
+        permanent: true,
       },
     };
   }
