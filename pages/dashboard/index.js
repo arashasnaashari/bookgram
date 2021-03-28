@@ -35,7 +35,7 @@ export const getServerSideProps = withSession(async function ({ req, res }) {
   await dbConnect();
   const user = req.session.get("user");
   if (!user) {
-    res.setHeader("location", "/login");
+    res.setHeader("location", "https://bookgram.vercel.app/login");
     res.statusCode = 302;
     res.end();
   }
