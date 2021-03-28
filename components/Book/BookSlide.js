@@ -1,4 +1,4 @@
-import Link from "next/link";
+// import link from "next/link";
 
 const Compo = ({ data, rate }) => {
   const array = [];
@@ -9,7 +9,7 @@ const Compo = ({ data, rate }) => {
   return (
     <div className="keen-slider__slide" key={data._id}>
       <div className="flex flex-col" style={{ direction: "rtl" }}>
-        <Link href={`/book/${data._id}`}>
+        <a href={`/book/${data._id}`}>
           <a>
             <img
               src={data.image}
@@ -24,18 +24,18 @@ const Compo = ({ data, rate }) => {
             }}
           ></div> */}
           </a>
-        </Link>
-        <Link href={`/book/${data._id}`}>
+        </a>
+        <a href={`/book/${data._id}`}>
           <h1 className="dark:text-white font-Vazir text-sm">{data.title}</h1>
-        </Link>
-        <Link href={`/ketab/author/${data.author}/0/7`}>
+        </a>
+        <a href={`/ketab/author/${data.author}/0/7`}>
           <h1
             className="dark:text-gray font-Vazir text-gray-400 break-all cursor-pointer"
             style={{ fontSize: "10px" }}
           >
             {data.author}
           </h1>
-        </Link>
+        </a>
         <h1 className="text-sm" style={{ color: "#FBBF24" }}>
           {array}
         </h1>
