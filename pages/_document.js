@@ -31,7 +31,7 @@ class MyDocument extends Document {
         <Head>
           <link rel="shortcut icon" href="/vercel.svg" />
           <script type="text/javascript">
-            if (typeof window !== "undefined"){" "}
+            if(typeof window !== "undefined")
             {
               ((window.$crisp = []),
               (window.CRISP_WEBSITE_ID =
