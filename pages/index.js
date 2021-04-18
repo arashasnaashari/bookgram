@@ -6,6 +6,7 @@ import SliderBlog from "../components/Book/SliderBlog";
 import Landing from "../components/Book/Landing";
 import BookIntro from "../components/Book/BookIntro";
 import LayOut from "../components/Layout/Layout";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 import { useState } from "react";
 function Home({ bestsellbook, newbook, hotbook, hotbookblog }) {
