@@ -17,17 +17,17 @@ function MyApp({ Component, pageProps }) {
   const Clozing = () => {
     useModel(false);
   };
-  if (typeof window !== "undefined") {
-    window.$crisp = [];
-    window.CRISP_WEBSITE_ID = "35a6cabe-2b02-430b-83f5-052512dee25d";
-    (function () {
-      document.createElement("script").src = "https://client.crisp.chat/l.js";
-      document.createElement("script").async = 1;
-      document
-        .getElementsByTagName("head")[0]
-        .appendChild(document.createElement("script"));
-    })();
-  }
+  // if (typeof window !== "undefined") {
+  //   window.$crisp = [];
+  //   window.CRISP_WEBSITE_ID = "35a6cabe-2b02-430b-83f5-052512dee25d";
+  //   (function () {
+  //     document.createElement("script").src = "https://client.crisp.chat/l.js";
+  //     document.createElement("script").async = 1;
+  //     document
+  //       .getElementsByTagName("head")[0]
+  //       .appendChild(document.createElement("script"));
+  //   })();
+  // }
   return (
     <>
       <Head>
