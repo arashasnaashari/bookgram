@@ -21,11 +21,11 @@ function MyApp({ Component, pageProps }) {
     window.$crisp = [];
     window.CRISP_WEBSITE_ID = "35a6cabe-2b02-430b-83f5-052512dee25d";
     (function () {
-      d = document;
-      s = d.createElement("script");
-      s.src = "https://client.crisp.chat/l.js";
-      s.async = 1;
-      d.getElementsByTagName("head")[0].appendChild(s);
+      document.createElement("script").src = "https://client.crisp.chat/l.js";
+      document.createElement("script").async = 1;
+      document
+        .getElementsByTagName("head")[0]
+        .appendChild(document.createElement("script"));
     })();
   }
   return (
