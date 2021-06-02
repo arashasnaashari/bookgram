@@ -9,15 +9,16 @@ export default async function handler(req, res) {
   //slug[1,2,3]
   //  { reply: { $slice: [0, 3] } }
   const books = await Book.find({})
+    .sort({ star: -1 })
     .skip(+slug[0])
     .limit(+slug[1])
-    .sort({ date: 1 })
     .select({
       title: 1,
       image: 1,
       author: 1,
       star: 1,
       nstar: 1,
+      data: 1,
     })
     .lean();
   res.status(200).json(books);

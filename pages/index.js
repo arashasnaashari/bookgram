@@ -1,4 +1,5 @@
 import SliderHot from "../components/Book/SliderHot";
+import Loading from "../components/Book/sliderLoading";
 import SliderSell from "../components/Book/SliderSell";
 import SliderNew from "../components/Book/SliderNew";
 import SliderAuthor from "../components/Book/SliderAuthor";
@@ -8,8 +9,59 @@ import BookIntro from "../components/Book/BookIntro";
 import LayOut from "../components/Layout/Layout";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-import { useState } from "react";
-function Home({ bestsellbook, newbook, hotbook, hotbookblog }) {
+import { useState, useEffect } from "react";
+function Home({ data, datablog }) {
+  const [bestsellbook, Setbestsellbook] = useState();
+  const [newbook, Setnewbook] = useState();
+  const [hotbook, Sethotbook] = useState();
+  const [hotbookblog, Sethotbookblog] = useState();
+  useEffect(async () => {
+    async function fetchHot() {
+      const reshot = await fetch("http://localhost:3000/api/hotbook/0/8", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const hotbook0 = await reshot.json();
+      Sethotbook(hotbook0);
+    }
+
+    async function fetchSell() {
+      const ressell = await fetch(
+        "http://localhost:3000/api/bestsellbook/0/8",
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      const bestsellbook0 = await ressell.json();
+
+      Setbestsellbook(bestsellbook0);
+    }
+    async function fetchNew() {
+      const resnew = await fetch("http://localhost:3000/api/newbook/0/8", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const newbook0 = await resnew.json();
+
+      Setnewbook(newbook0);
+    }
+    async function fetchBlog() {
+      const reshotblog = await fetch("http://localhost:3000/api/bestpost/0/7", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const hotbookblog0 = await reshotblog.json();
+
+      Sethotbookblog(hotbookblog0);
+    }
+
+    fetchBlog();
+    fetchSell();
+    fetchNew();
+    fetchHot();
+  }, []);
+
   return (
     <LayOut>
       <Landing />
@@ -21,25 +73,8 @@ function Home({ bestsellbook, newbook, hotbook, hotbookblog }) {
           margin: "3rem 0",
         }}
       ></div>
-      <SliderHot data={hotbook} />
-      <div
-        style={{
-          width: "100%",
-          backgroundColor: "#c1c3c7",
-          height: "2px",
-          margin: "3rem 0",
-        }}
-      ></div>
-      <BookIntro data={hotbook} />
-      <div
-        style={{
-          width: "100%",
-          backgroundColor: "#c1c3c7",
-          height: "2px",
-          margin: "3rem 0",
-        }}
-      ></div>
-      <SliderNew data={newbook} />
+      {hotbook && <SliderHot data={hotbook} />}
+      {!hotbook && <Loading />}
 
       <div
         style={{
@@ -49,7 +84,7 @@ function Home({ bestsellbook, newbook, hotbook, hotbookblog }) {
           margin: "3rem 0",
         }}
       ></div>
-      <SliderSell data={bestsellbook} />
+      {hotbook && <BookIntro data={hotbook} />}
       <div
         style={{
           width: "100%",
@@ -58,9 +93,29 @@ function Home({ bestsellbook, newbook, hotbook, hotbookblog }) {
           margin: "3rem 0",
         }}
       ></div>
-      {/* slider blog*/}
+      {newbook && <SliderNew data={newbook} />}
+      {!newbook && <Loading />}
 
-      <SliderBlog data={hotbookblog} />
+      <div
+        style={{
+          width: "100%",
+          backgroundColor: "#c1c3c7",
+          height: "2px",
+          margin: "3rem 0",
+        }}
+      ></div>
+      {bestsellbook && <SliderSell data={bestsellbook} />}
+      {!bestsellbook && <Loading />}
+      <div
+        style={{
+          width: "100%",
+          backgroundColor: "#c1c3c7",
+          height: "2px",
+          margin: "3rem 0",
+        }}
+      ></div>
+
+      {hotbookblog && <SliderBlog data={hotbookblog} />}
       <div
         style={{
           width: "100%",
@@ -88,17 +143,6 @@ export async function getServerSideProps(context) {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
-  const ressell = await fetch(
-    "https://bookgram.vercel.app/api/bestsellbook/0/8",
-    {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    }
-  );
-  const resnew = await fetch("https://bookgram.vercel.app/api/newbook/0/8", {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  });
   const reshotblog = await fetch(
     "https://bookgram.vercel.app/api/bestpost/0/7",
     {
@@ -108,11 +152,9 @@ export async function getServerSideProps(context) {
   );
   const hotbookblog = await reshotblog.json();
   const hotbook = await reshot.json();
-  const bestsellbook = await ressell.json();
-  const newbook = await resnew.json();
 
   return {
-    props: { hotbook, newbook, bestsellbook, hotbookblog },
+    props: { data: hotbook },
   };
 }
 export default Home;

@@ -7,29 +7,26 @@
     <title>Document</title>
     <style>
       ::-webkit-scrollbar {
-  width: 20px;
-  background-color: black;
+        width: 20px;
+        background-color: black;
+      }
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: green;
+      }
 
-}
-/* Handle */
- ::-webkit-scrollbar-thumb {
-  background: green;
-} 
-
-p {
-   margin-bottom: 100px;
-}
+      p {
+        margin-bottom: 100px;
+      }
     </style>
-    
   </head>
   <body>
- 
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       $(document).ready(function () {
         $(window).keyup(function (e) {
           if (e.keyCode == 44) {
@@ -37,8 +34,6 @@ p {
           }
         });
       });
-
-
 
       //bookgram :
       /*
@@ -59,13 +54,96 @@ p {
 
       //cloud :
       /**/
-      
-      //react native : 
+
+      //react native :
       /**/
 
+      [
+        "title 2",
+        "title 3",
+        "title 8",
+        "ماهی سیاه کوچولو",
+        "title 28",
+        "title 4",
+        "title 27",
+        "title 12",
+        "title 24",
+        "title 1",
+        "title 25",
+        "title 23",
+        "title 10",
+        "title 6",
+        "title 11",
+        "title 7",
+        "title 5",
+        "title 30",
+        "title 31",
+        "title 14",
+        "title 16",
+        "title 21",
+        "title 15",
+        "title 9",
+        "title 17",
+        "title 18",
+        "title 19",
+        "title 26",
+        "title 29",
+        "title 22",
+        "title 20",
+        "title 13",
+        "title 9",
+      ];
+    </script> -->
 
+    <script>
+      function memorySizeOf(obj) {
+        var bytes = 0;
 
+        function sizeOf(obj) {
+          if (obj !== null && obj !== undefined) {
+            switch (typeof obj) {
+              case "number":
+                bytes += 8;
+                break;
+              case "string":
+                bytes += obj.length * 2;
+                break;
+              case "boolean":
+                bytes += 4;
+                break;
+              case "object":
+                var objClass = Object.prototype.toString.call(obj).slice(8, -1);
+                if (objClass === "Object" || objClass === "Array") {
+                  for (var key in obj) {
+                    if (!obj.hasOwnProperty(key)) continue;
+                    sizeOf(obj[key]);
+                  }
+                } else bytes += obj.toString().length * 2;
+                break;
+            }
+          }
+          return bytes;
+        }
 
+        function formatByteSize(bytes) {
+          if (bytes < 1024) return bytes + " bytes";
+          else if (bytes < 1048576) return (bytes / 1024).toFixed(3) + " KiB";
+          else if (bytes < 1073741824)
+            return (bytes / 1048576).toFixed(3) + " MiB";
+          else return (bytes / 1073741824).toFixed(3) + " GiB";
+        }
+
+        return formatByteSize(sizeOf(obj));
+      }
+
+      const Ob = {
+        date: ["چهارشنبه, ۱۲ آذر ۱۳۹۹"],
+        time: [23],
+        pages: [23],
+        book: "egeywt7f9ewifg97efe",
+        userId: "egeywt7f9ewifg97efe",
+      };
+      console.log(memorySizeOf(Ob));
     </script>
   </body>
 </html>

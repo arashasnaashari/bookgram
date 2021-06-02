@@ -10,7 +10,7 @@ const readerSchema = new Schema({
     type: Array,
     required: true,
   },
-  pages: {
+  pages: {   
     type: Array,
     required: true,
   },
