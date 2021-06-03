@@ -17,17 +17,20 @@ function Home({ data, datablog }) {
   const [hotbookblog, Sethotbookblog] = useState();
   useEffect(async () => {
     async function fetchHot() {
-      const reshot = await fetch("http://localhost:3000/api/hotbook/0/8", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      });
+      const reshot = await fetch(
+        "https://bookgram.vercel.app/api/hotbook/0/8",
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
       const hotbook0 = await reshot.json();
       Sethotbook(hotbook0);
     }
 
     async function fetchSell() {
       const ressell = await fetch(
-        "http://localhost:3000/api/bestsellbook/0/8",
+        "https://bookgram.vercel.app/api/bestsellbook/0/8",
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
@@ -38,19 +41,25 @@ function Home({ data, datablog }) {
       Setbestsellbook(bestsellbook0);
     }
     async function fetchNew() {
-      const resnew = await fetch("http://localhost:3000/api/newbook/0/8", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      });
+      const resnew = await fetch(
+        "https://bookgram.vercel.app/api/newbook/0/8",
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
       const newbook0 = await resnew.json();
 
       Setnewbook(newbook0);
     }
     async function fetchBlog() {
-      const reshotblog = await fetch("http://localhost:3000/api/bestpost/0/7", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      });
+      const reshotblog = await fetch(
+        "https://bookgram.vercel.app/api/bestpost/0/7",
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
       const hotbookblog0 = await reshotblog.json();
 
       Sethotbookblog(hotbookblog0);

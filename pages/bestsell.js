@@ -8,10 +8,13 @@ function Home() {
   const [limit, setlimit] = useState(5);
   const [data, setData] = useState();
   async function fetchSell(skip, limit) {
-    const ressell = await fetch(`http://localhost:3000/api/newbook/${0}/${5}`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
+    const ressell = await fetch(
+      `https://bookgram.vercel.app/api/newbook/${0}/${5}`,
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     const bestsellbook0 = await ressell.json();
     // console.log(
     //   bestsellbook0.map((e) => {
@@ -43,7 +46,7 @@ function Home() {
   const handleLoad = async (e) => {
     e.preventDefault();
     const ressell = await fetch(
-      `http://localhost:3000/api/newbook/${skip + 5}/${5}`,
+      `https://bookgram.vercel.app/api/newbook/${skip + 5}/${5}`,
       {
         method: "GET",
         headers: { "Content-Type": "application/json" },
