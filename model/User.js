@@ -56,6 +56,12 @@ const userSchema = new Schema({
       ref: "User",
     },
   ],
+  books: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Book",
+    },
+  ],
   bio: {
     type: String,
     required: false,

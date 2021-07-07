@@ -67,11 +67,12 @@ const Compo = ({ data, userId }) => {
             <div>
               <button
                 className="p-4 bg-bookgram-btn rounded-sm text-xs md:text-base"
-                onClick={async () => {
+                onClick={async (e) => {
+                  e.preventDefault();
                   const res = await fetch(
                     "https://bookgram.vercel.app/api/addtolib",
                     {
-                      method: "POST",
+                      method: "PUT",
                       headers: { "Content-Type": "application/json" },
                       body: JSON.stringify({
                         bookId: data._id,
@@ -80,7 +81,11 @@ const Compo = ({ data, userId }) => {
                     }
                   );
                   const data1 = await res.json();
-                  alert("okk");
+                  if (data1.msg == false) {
+                    alert("U DID BEFORE !");
+                  } else {
+                    alert("ITS DONE!");
+                  }
                 }}
               >
                 اضافه به کتابخانه

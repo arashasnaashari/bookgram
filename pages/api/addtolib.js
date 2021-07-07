@@ -1,29 +1,22 @@
-import Read from "../../model/reader";
+import User from "../../model/User";
 import dbConnect from "../../utils/dbConnect";
+
 export default async function handler(req, res) {
   await dbConnect();
   try {
-    const createdShelf = await Read.findOne({
-      userId: req.body.userId,
-      book: req.body.bookId,
-    })
-      .select({ _id: 1 })
-      .lean();
+    const book = await User.findById(req.body.userId).select({
+      books: 1,
+    });
+    const uHaveAded = book.books.find((u) => u._id == req.body.bookId);
 
-    if (createdShelf) {
-      res.status(200).json({ sign: "قبلا خریدی" });
+    if (uHaveAded) {
+      res.status(200).json({ msg: false });
     } else {
-      const newBook = new Read({
-        userId: req.body.userId,
-        book: req.body.bookId,
-        pages: [0],
-        time: [0],
-        date: [new Date().toISOString().slice(0, 10)],
-      });
-      const result = await newBook.save();
-      res.status(200).json({ sign: true });
+      await book.books.push(req.body.bookId);
+      await book.save();
+      res.status(200).json({ msg: true });
     }
-  } catch (error) {
-    res.status(400).json({ sign: false });
+  } catch (err) {
+    console.log(err);
   }
 }
