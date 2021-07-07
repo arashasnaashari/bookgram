@@ -14,6 +14,7 @@ function Home({ data, datablog }) {
   const [bestsellbook, Setbestsellbook] = useState();
   const [newbook, Setnewbook] = useState();
   const [hotbook, Sethotbook] = useState();
+  const [readblebook, Setreadblebook] = useState();
   const [hotbookblog, Sethotbookblog] = useState();
   useEffect(async () => {
     async function fetchHot() {
@@ -26,6 +27,15 @@ function Home({ data, datablog }) {
       );
       const hotbook0 = await reshot.json();
       Sethotbook(hotbook0);
+    }
+
+    async function fetchReadble() {
+      const reshot = await fetch("https://bookgram.vercel.app/api/readable", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const hotbook0 = await reshot.json();
+      Setreadblebook(hotbook0);
     }
 
     async function fetchSell() {
@@ -69,6 +79,7 @@ function Home({ data, datablog }) {
     fetchSell();
     fetchNew();
     fetchHot();
+    fetchReadble();
   }, []);
 
   return (
@@ -102,7 +113,17 @@ function Home({ data, datablog }) {
           margin: "3rem 0",
         }}
       ></div>
-      {newbook && <SliderNew data={newbook} />}
+      {readblebook && <SliderNew data={readblebook} name=" ! آنلاین بخون" />}
+      {!readblebook && <Loading />}
+      <div
+        style={{
+          width: "100%",
+          backgroundColor: "#c1c3c7",
+          height: "2px",
+          margin: "3rem 0",
+        }}
+      ></div>
+      {newbook && <SliderNew data={newbook} name="تازه ها" />}
       {!newbook && <Loading />}
 
       <div

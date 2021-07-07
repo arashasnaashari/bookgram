@@ -11,7 +11,7 @@ const Compo = () => {
     },
     {
       img: "/img/img-gallery/Course.png",
-      text: "دوره",
+      text: "داستانی",
     },
     {
       img: "/img/img-gallery/Economy.png",

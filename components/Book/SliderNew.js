@@ -1,6 +1,6 @@
 import { useKeenSlider } from "keen-slider/react";
 import SlideBook from "./BookSlide";
-const A = ({ data }) => {
+const A = ({ data, name }) => {
   const [sliderRef] = useKeenSlider({
     breakpoints: {
       "(min-width: 100px)": {
@@ -32,7 +32,7 @@ const A = ({ data }) => {
         </div>
         <div>
           <h1 className="font-Vazir text-2xl font-bold dark:text-gray-100">
-            تازه ها
+            {name}
           </h1>
         </div>
       </div>

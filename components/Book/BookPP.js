@@ -69,22 +69,26 @@ const Compo = ({ data, userId }) => {
                 className="p-4 bg-bookgram-btn rounded-sm text-xs md:text-base"
                 onClick={async (e) => {
                   e.preventDefault();
-                  const res = await fetch(
-                    "https://bookgram.vercel.app/api/addtolib",
-                    {
-                      method: "PUT",
-                      headers: { "Content-Type": "application/json" },
-                      body: JSON.stringify({
-                        bookId: data._id,
-                        userId: userId,
-                      }),
+                  if (userId) {
+                    const res = await fetch(
+                      "https://bookgram.vercel.app/api/addtolib",
+                      {
+                        method: "PUT",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                          bookId: data._id,
+                          userId: userId,
+                        }),
+                      }
+                    );
+                    const data1 = await res.json();
+                    if (data1.msg == false) {
+                      alert("U DID BEFORE !");
+                    } else {
+                      alert("ITS DONE!");
                     }
-                  );
-                  const data1 = await res.json();
-                  if (data1.msg == false) {
-                    alert("U DID BEFORE !");
                   } else {
-                    alert("ITS DONE!");
+                    alert("LOGIN FIRST!");
                   }
                 }}
               >
